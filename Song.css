@@ -1,0 +1,20 @@
+@font-face {
+	font-family: "DK";
+	src: url("dk.otf");
+}
+
+div.songbar {
+	position: fixed;
+	width: 100%;
+	height: 70px;
+	bottom: 0px;
+	background-color: rgb(30, 30, 30);
+}
+
+div.songaccent {
+	position: fixed;
+	width: 240px;
+	height: 70px;
+	bottom: 0px;
+	background-color: rgb(236, 44, 91);
+}

@@ -1,0 +1,77 @@
+/* this is terrible, sorry */
+
+@font-face {
+	font-family: "DK";
+	src: url("dk.otf");
+}
+
+.minoHeader {
+	position: fixed;
+	top: 45%;
+	left: 100px;
+	transform: translate(0%, -50%);
+	font-family: "DK";
+	font-size: 130px;
+	color: white;
+}
+
+.bongo {
+	position: fixed;
+	top: calc(45% - 27px);
+	right: 7%;
+	object-fit: cover;
+}
+
+.banner {
+	background-color: rgb(4, 16, 27);
+	height: 190px;
+	width: 100%;
+	object-fit: scale-down;
+	position: fixed;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.youtubebtn {
+	position: fixed;
+	top: calc(45% + 135px);
+	left: 0px;
+	transform: translate(0%, -50%);
+	cursor: pointer;
+	max-width: 100%;
+	height: auto;
+}
+
+.steambtn {
+	position: fixed;
+	top: calc(45% + 135px);
+	left: 360px;
+	transform: translate(0%, -50%);
+	cursor: pointer;
+}
+
+.twitterbtn {
+	position: fixed;
+	top: calc(45% + 135px);
+	left: 720px;
+	transform: translate(0%, -50%);
+	cursor: pointer;
+}
+
+body {
+	background-image: url("back3.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 1000px;
+	width: 2000px;
+	overflow: hidden;
+}
+
+html, body, {
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
