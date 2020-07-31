@@ -70,6 +70,7 @@ img.background {
 	width: 3840px;
 	height: 1080px;
 	position: absolute;
+	max-width: 3840px;
 }
 
 img.voidbar1 {

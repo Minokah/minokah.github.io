@@ -8,7 +8,7 @@
 	</head>
 
 	<body>
-		<img id="aaa" class="background" src="Background.png">
+		<img class="background" src="Background.png" draggable="false">
 
 		<div class="topbar">
 			<p class="dk" style="font-size: 45px; color: white; position: fixed; left: 15px; top: -35px;">hello there</p>
@@ -27,18 +27,21 @@
 
 		<p class="dk" style="font-size: 25px; color: rgba(0, 0, 0, 0.4); position: absolute; left: 15px; top: 55px;">home hub thingy test<br>OwO what's this?</p>
 
-		<img id="voidbar1" class="voidbar1" src="Voidbar.png">
-		<img class="voidbar2" src="Voidbar.png">
+		<img class="voidbar1" src="Voidbar.png" draggable="false">
+		<img class="voidbar2" src="Voidbar.png" draggable="false">
 
-		<p class="dk" style="font-size: 130px; color: white; position: fixed; left: 120px; top: 105px;">minokah</p>
-		<p class="dk" style="font-size: 40px; color: white; position: fixed; left: 495px; top: 285px;">is chillin'</p>
+		<p class="dk" id="minokahtext" style="font-size: 130px; color: white; position: fixed; left: 120px; top: 105px;">minokah</p>
+		<p class="dk" id="moodtext" style="font-size: 40px; color: white; position: fixed; left: 495px; top: 285px;">is chillin'</p>
 
-		<img class="breadmotes animate__animated animate__fadeInRight" style="--animate-duration:0.5s" src="Breadmotes.png">
+		<p class="dk" id="secondscrtext" style="font-size: 30px; color:rgba(255, 255, 255, 0.4); position: fixed; left: 2500px; top: 265px;">todo: insert another menu here... maybe?</p>
 
-		<img src="youtube.png" onClick="window.open('https://www.youtube.com/channel/UCyQkTJLpfR0PEMvDQQH14cw')" class="youtubebtn"></div>
-		<img src="steam.png" onClick="window.open('https://steamcommunity.com/id/minokah/')" class="steambtn"></div>
-		<img src="twitter.png" onClick="window.open('http://twitter.com/minokah_')" class="twitterbtn"></div>
+		<img class="breadmotes animate__animated animate__fadeInRight" style="--animate-duration:0.5s" src="Breadmotes.png" draggable="false">
 
+		<img src="youtube.png" onClick="window.open('https://www.youtube.com/channel/UCyQkTJLpfR0PEMvDQQH14cw')" class="youtubebtn" draggable="false"></div>
+		<img src="steam.png" onClick="window.open('https://steamcommunity.com/id/minokah/')" class="steambtn" draggable="false"></div>
+		<img src="twitter.png" onClick="window.open('http://twitter.com/minokah_')" class="twitterbtn" draggable="false"></div>
+
+		<script type="text/javascript" src="breadmotes.js"></script>
 		<script type="text/javascript" src="javascript.js"></script>
 	</body>
 </html>
