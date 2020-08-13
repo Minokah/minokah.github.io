@@ -6,6 +6,10 @@ var MinokahText = document.getElementById("minokahtext");
 var MoodText = document.getElementById("moodtext");
 var SecondScrText = document.getElementById("secondscrtext");
 
+var News = document.getElementsByClassName("newsframe")[0];
+var NewsTitle = document.getElementById("newstitle");
+var NewsVidTitle = document.getElementById("newsvidtitle");
+
 void1Pos.style.left = "0px";
 void2Pos.style.left = "1920px";
 
@@ -41,6 +45,11 @@ setInterval(() => {
 					MinokahText.style.left = CubicOut(adf, -1435, 1550, 400) + "px";
 					MoodText.style.left = CubicOut(adf, -1055, 1550, 400) + "px";
 					SecondScrText.style.left = CubicOut(adf, 950, 1550, 400) + "px";
+
+					News.style.left = CubicOut(adf, -230, 1550, 400) + "px";
+					NewsTitle.style.left = CubicOut(adf, -215, 1550, 400) + "px";
+					NewsVidTitle.style.left = CubicOut(adf, 70, 1550, 400) + "px";
+
 					break;
 				case true:
 					if (adf < 300) Background.style.left = CubicOut(adf, 0, -1920, 300) + "px";
@@ -48,6 +57,11 @@ setInterval(() => {
 					MinokahText.style.left = CubicOut(adf, 120, -1550, 400) + "px";
 					MoodText.style.left = CubicOut(adf, -495, -1550, 400) + "px";
 					SecondScrText.style.left = CubicOut(adf, 2500, -1550, 400) + "px";
+
+					News.style.left = CubicOut(adf, 1320, -1550, 400) + "px";
+					NewsTitle.style.left = CubicOut(adf, 1335, -1550, 400) + "px";
+					NewsVidTitle.style.left = CubicOut(adf, 1620, -1550, 400) + "px";
+
 					break;
 			}
 		}
