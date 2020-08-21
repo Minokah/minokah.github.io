@@ -1,74 +1,93 @@
-var void1Pos = document.getElementsByClassName("voidbar1")[0];
-var void2Pos = document.getElementsByClassName("voidbar2")[0];
-var Breadmotes = document.getElementsByClassName("breadmotes")[0];
-var Background = document.getElementsByClassName("background")[0];
-var MinokahText = document.getElementById("minokahtext");
-var MoodText = document.getElementById("moodtext");
-var SecondScrText = document.getElementById("secondscrtext");
-
-var News = document.getElementsByClassName("newsframe")[0];
-var NewsTitle = document.getElementById("newstitle");
-var NewsVidTitle = document.getElementById("newsvidtitle");
-
-void1Pos.style.left = "0px";
-void2Pos.style.left = "1920px";
-
-var test = false;
-var easing = false;
-var adf = 0;
+var ListFrame = document.getElementById("ListFrame");
+var ProjectsButton = document.getElementById("ProjectsButton");
+var GalleryButton = document.getElementById("GalleryButton");
+var ListEmptyText = document.getElementById("ListEmptyText");
 
 function CubicOut(t, b, c, d) {
 	return c*((t=t/d-1)*t*t + 1) + b;
 }
 
-document.addEventListener('keydown', function(event) {
-	if(event.keyCode == 89 && adf >= 400) {
-		test = !test;
-		easing = true;
-		adf = 0;
-	}
-});
+var DiscordSmallFrame = document.getElementById("DiscordSmallFrame");
+var DiscordSmallArrow = document.getElementById("DiscordSmallArrow");
+var DiscordSmallState = document.getElementById("DiscordSmallState");
+var DiscordSmallActive = false;
 
-setInterval(() => {
-	void1Pos.style.left = parseFloat(void1Pos.style.left) - 0.5 + "px";
-	void2Pos.style.left = parseFloat(void2Pos.style.left) - 0.5 + "px";
-	if (parseFloat(void1Pos.style.left) <= -1920) void1Pos.style.left = "1920px";
-	if (parseFloat(void2Pos.style.left) <= -1920) void2Pos.style.left = "1920px";
+DiscordSmallArrow.onclick = function() {
+	DiscordSmallActive = !DiscordSmallActive;
 	
-	if (easing) {
-		if (adf < 400) {
-			switch (test) 
-			{
-				case false:
-					if (adf < 300) Background.style.left = CubicOut(adf, -1920, 1920, 300) + "px";
-					Breadmotes.style.left = CubicOut(adf, -610, 1550, 400) + "px";
-					MinokahText.style.left = CubicOut(adf, -1435, 1550, 400) + "px";
-					MoodText.style.left = CubicOut(adf, -1055, 1550, 400) + "px";
-					SecondScrText.style.left = CubicOut(adf, 950, 1550, 400) + "px";
-
-					News.style.left = CubicOut(adf, -230, 1550, 400) + "px";
-					NewsTitle.style.left = CubicOut(adf, -215, 1550, 400) + "px";
-					NewsVidTitle.style.left = CubicOut(adf, 70, 1550, 400) + "px";
-
-					break;
-				case true:
-					if (adf < 300) Background.style.left = CubicOut(adf, 0, -1920, 300) + "px";
-					Breadmotes.style.left = CubicOut(adf, 940, -1550, 400) + "px";
-					MinokahText.style.left = CubicOut(adf, 120, -1550, 400) + "px";
-					MoodText.style.left = CubicOut(adf, -495, -1550, 400) + "px";
-					SecondScrText.style.left = CubicOut(adf, 2500, -1550, 400) + "px";
-
-					News.style.left = CubicOut(adf, 1320, -1550, 400) + "px";
-					NewsTitle.style.left = CubicOut(adf, 1335, -1550, 400) + "px";
-					NewsVidTitle.style.left = CubicOut(adf, 1620, -1550, 400) + "px";
-
-					break;
-			}
-		}
-		else easing = false;
+	if (DiscordSmallActive) {
+		DiscordSmallFrame.style.height = "100px";
+		DiscordSmallState.style.opacity = 1;
 	}
-}, 1000/144);
+	else {
+		DiscordSmallFrame.style.height = "50px";
+		DiscordSmallState.style.opacity = 0;
+	}
+}
 
-setInterval(() => {
-	adf++;
-}, 1);
+var ListActive = false;
+var CurrentActive = 0;
+// 0 projects
+// 1 gallery
+
+var ProjectsContainer = document.getElementById("ProjectsContainer");
+
+ProjectsButton.onmouseover = function() { ProjectsButtonHandler(true); }
+ProjectsButton.onmouseout = function() { ProjectsButtonHandler(false); }
+
+ProjectsButton.onclick = function() { ToggleList(0); }
+GalleryButton.onclick = function() { ToggleList(1); }
+
+GalleryButton.onmouseover = function() { GalleryButtonHandler(true) };
+GalleryButton.onmouseout = function() { GalleryButtonHandler(false) };
+
+function ProjectsButtonHandler(toggle) {
+	if (toggle || ListActive && CurrentActive == 0) ProjectsButton.style.height = "65px";
+	else ProjectsButton.style.height = "0px";
+}
+
+function GalleryButtonHandler(toggle) {
+	if (toggle || ListActive && CurrentActive == 1) GalleryButton.style.height = "65px";
+	else GalleryButton.style.height = "0px";
+}
+
+function ToggleList(num) {
+	if (num == CurrentActive || !ListActive) ListActive = !ListActive;
+	CurrentActive = num;
+
+	if (num == 0) {
+		GalleryButton.style.height = "0px";
+		ListEmptyText.innerHTML = "Projects is empty";
+		ListEmptyText.style.opacity = 1;
+
+		GalleryContainer.style.opacity = 0;
+	}
+	else if (num == 1) {
+		ProjectsButton.style.height = "0px";
+		/*ListEmptyText.innerHTML = "Gallery is empty";*/
+		ListEmptyText.style.opacity = 0;
+
+		GalleryContainer.style.opacity = 1;
+	}
+
+	if (ListActive) {
+		ListFrame.style.opacity = 1;
+		ListFrame.style.height = "350px";
+	}
+	else {
+		ListFrame.style.opacity = 0;
+		ListFrame.style.height = "0px";
+		ListEmptyText.style.opacity = 0;
+
+		GalleryContainer.style.opacity = 0;
+		ProjectsContainer.style.opacity = 0;
+	}
+}
+
+var TwitterButton = document.getElementById("TwitterButton");
+var YouTubeButton = document.getElementById("YouTubeButton");
+var SteamButton = document.getElementById("SteamButton");
+
+TwitterButton.onclick = function() { window.open("http://twitter.com/minokah_"); }
+YouTubeButton.onclick = function() { window.open("https://www.youtube.com/channel/UCyQkTJLpfR0PEMvDQQH14cw"); }
+SteamButton.onclick = function() { window.open("https://steamcommunity.com/id/minokah/"); }

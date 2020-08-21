@@ -1,114 +1,401 @@
-/* this is terrible, sorry */
-
 @font-face {
 	font-family: "DK";
-	src: url("dk.otf");
+    src: url("Assets//dk.otf");
 }
 
-.youtubebtn {
-	position: fixed;
-	top: calc(45% + 135px);
-	left: 0px;
-	transform: translate(0%, -50%);
-	cursor: pointer;
-	max-width: 360px;
-	width: 100%;
-	height: auto;
+@font-face {
+	font-family: "Strawberry";
+	src: url("Assets//strawberry.otf");
 }
 
-.steambtn {
-	position: fixed;
-	top: calc(45% + 215px);
-	left: 0px;
-	transform: translate(0%, -50%);
-	cursor: pointer;
-	max-width: 360px;
-	height: auto;
+@font-face {
+	font-family: "Bahnschrift";
+	src: url("Assets//bahn.ttf");
 }
 
-.twitterbtn {
-	position: fixed;
-	top: calc(45% + 295px);
-	left: 0px;
-	transform: translate(0%, -50%);
-	cursor: pointer;
-	max-width: 360px;
-	height: auto;
+* {
+    margin: 0; /* fuck margin */
 }
 
-.youtube {
-	float: left;
-	background-color: red;
-	width: 33%;
-	height: 80px;
-}
+span, img{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
-.steam {
-	float: left;
-	background-color: rgb(35, 31, 32);
-	width: 33%;
-	height: 80px;
-	left: 33%;
-}
-
-.twitter {
-	float: left;
-	background-color: rgb(0, 172, 237);
-	width: 33%;
-	height: 80px;
-	left: 66%;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
 }
 
 body {
-	overflow: hidden;
-	margin: 0;
+    background-color: rgb(8, 0, 33);
+    
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
-img.background {
-	color: rgb(255, 255, 255);
-	opacity: 0.7;
-	width: 3840px;
-	height: 1080px;
-	position: absolute;
-	max-width: 3840px;
+.Main {
+    font-family: "DK";
+    color: white;
+    width: 100%;
+    height: 100vh;
+
+    position: absolute;
 }
 
-img.voidbar1 {
-	width: 1920px;
-	height: 190px;
-	top: 215px;
-	position: fixed;
+.HelloText {
+    position: absolute;
+    left: 50px;
+    top: 30px;
+
+    font-size: 30px;
 }
 
-img.voidbar2 {
-	width: 1920px;
-	height: 190px;
-	top: 215px;
-	left: 1920px;
-	position: fixed;
+
+#OldSiteLink {
+    font-family: "DK";
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.6);
+
+    position: absolute;
+    top: 37px;
+    left: 200px;
+
+    cursor: pointer;
 }
 
-img.breadmotes {
-	position: fixed;
-	width: 900px;
-	height: 600px;
-	clip: rect(0px, 900px, 300px, 0px);
-	left: 940px;
-	top: 165px;
+#SocialsFrame {
+    width: 140px;
+    height: 30px;
+    
+    position: absolute;
+    top: 30px;
+    right: 50px;
 }
 
-p.dk {
-	font-family: "DK";
+.ProfileButton {
+    width: 30px;
+    height: 100%;
+
+    position: absolute;
+    cursor: pointer;
 }
 
-a.oldsite:hover {
-	color: white;
+#TwitterButton {
+    left: 0;
 }
 
-a.oldsite:link {
-	color: rgb(100, 100, 100);
+#YouTubeButton {
+    left: 55px;
 }
 
-a.oldsite:visited {
-	color: rgb(100, 100, 100);
+#SteamButton {
+    left: 110px;
+}
+
+#OwOText {
+    font-family: "DK";
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.15);
+
+    position: absolute;
+    top: 70px;
+    right: 50px;
+}
+
+#DiscordSmallFrame {
+    width: 350px;
+    height: 50px;
+    background: linear-gradient(90deg, rgba(232,0,73,1) 0%, rgba(145,0,46,1) 54%);
+    
+    margin-bottom: 0;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    transition-duration: 0.15s;
+    display: none;
+}
+
+#DiscordSmallIcon {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgb(30, 30, 30);
+
+    position: absolute;
+    left: 10px;
+    top: 2px;
+}
+
+#DiscordSmallTitle {
+    font-family: "DK";
+    font-size: 25px;
+    
+    position: absolute;
+    left: 70px;
+    top: 10px;
+}
+
+#DiscordSmallArrow {
+    width: 20px;
+    height: 10px;
+
+    position: absolute;
+    top: 20px;
+    right: 15px;
+
+    cursor: pointer;
+}
+
+#DiscordSmallState {
+    font-family: "DK";
+    font-size: 25px;
+    
+    position: absolute;
+    left: 15px;
+    top: 58px;
+    
+    opacity: 0;
+    transition-duration: 0.15s;
+}
+
+.PresenceFrame {
+    width: 1300px;
+    height: 220px;
+
+    margin: auto;
+    margin-top: 220px;
+    margin-bottom: 55px;
+    position: relative;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.BioFrame {
+    width: 50%;
+    height: inherit;
+
+    position: absolute;
+}
+
+.MinokahIcon {
+    width: 220px;
+    height: 220px;
+}
+
+.MinokahText {
+    font-family: "Strawberry";
+    font-size: 80px;
+
+    position: absolute;
+    left: 260px;
+    top: 20px;
+}
+
+.MinokahSubText {
+    font-family: "DK";
+    font-size: 32px;
+
+    position: absolute;
+    left: 260px;
+    top: 135px;
+}
+
+.DiscordFrame {
+    width: 50%;
+    height: inherit;
+    
+    position: relative;
+    left: 50%;
+    background: linear-gradient(90deg, rgba(232,0,73,1) 0%, rgba(145,0,46,1) 54%);
+}
+
+.DiscordIcon {
+    width: 180px;
+    height: 180px;
+    border: 6px solid rgb(30, 30, 30);
+
+    position: absolute;
+    left: 30px;
+    top: 13px;
+}
+
+.DiscordTitle {
+    font-family: "DK";
+    font-size: 50px;
+    
+    position: absolute;
+    left: 250px;
+    top: 40px;
+}
+
+.DiscordState {
+    font-family: "DK";
+    font-size: 30px;
+    
+    position: absolute;
+    left: 250px;
+    top: 105px;
+}
+
+.DiscordTime {
+    font-family: "DK";
+    font-size: 30px;
+    
+    position: absolute;
+    left: 250px;
+    top: 145px;
+}
+
+.NavigationFrame {
+    width: 800px;
+    height: 65px;
+
+    position: relative;
+
+    margin: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.NavButton {
+    width: 200px;
+    transition-duration: 0.15s;
+    cursor: pointer;
+}
+
+#ProjectsButton {
+    height: 0px;
+    position: absolute;
+    background: linear-gradient(180deg, rgba(0,131,183,1) 0%, rgba(0,104,145,1) 55%);
+}
+
+#ProjectsLink {
+    font-family: "DK";
+    font-size: 40px;
+
+    position: absolute;
+    left: 45px;
+    top: 6px;
+}
+
+#GalleryButton {
+    height: 0px;
+    position: absolute;
+    right: 50px;
+    
+    background: linear-gradient(180deg, rgba(255,106,0,1) 0%, rgba(158,63,0,1) 100%);
+}
+
+#GalleryLink {
+    font-family: "DK";
+    font-size: 40px;
+
+    position: absolute;
+    left: 50px;
+    top: 6px;
+}
+
+#ListFrame {
+    width: 100%;
+    height: 0px;
+    margin-bottom: 50px;
+
+    position: relative;
+
+    transition-duration: 0.2s;
+    
+    opacity: 0;
+    background: linear-gradient(180deg, rgba(30,30,30,1) 0%, rgba(10,10,10,1) 100%);
+}
+
+#ListEmptyText {
+    font-family: "DK";
+    font-size: 30px;
+    text-align: center;
+
+    position: absolute;
+    top: 150px;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    opacity: 0;
+    transition-duration: 0.15s;
+}
+
+.ListContainer {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+
+    opacity: 0;
+    transition-duration: 0.15s;
+}
+
+#ProjectsTestImage {
+    width: 330px;
+    height: 220px;
+
+    position: absolute;
+    left: 50px;
+    top: 50px;
+}
+
+#ProjectsTestLabel {
+    font-family: "DK";
+    font-size: 30px;
+    text-align: center;
+
+    position: absolute;
+    top: 280px;
+    left: 50px;
+}
+
+#VectorBackground {
+    width: 100%;
+    height: 100%;
+    background: url("Assets//pattern2.png");
+    background-repeat: repeat;
+
+    position: absolute;
+    top: 0;
+
+    pointer-events: none;
+}
+
+@media only screen and (max-width: 1400px) {
+    .DiscordFrame {
+        display: none;
+    }
+
+    #DiscordSmallFrame {
+        display: initial;
+    }
+
+    .PresenceFrame {
+        width: 500px;
+    }
+
+    .BioFrame {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 915px) {
+    .NavigationFrame {
+        width: 100%;
+    }
+
+    #GalleryButton {
+        right: 150px;
+    }
 }
