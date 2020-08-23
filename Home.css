@@ -1,23 +1,23 @@
 @font-face {
 	font-family: "DK";
-    src: url("Assets//dk.otf");
+    src: url("Assets/Site/dk.otf");
 }
 
 @font-face {
 	font-family: "Strawberry";
-	src: url("Assets//strawberry.otf");
+	src: url("Assets/Site/strawberry.otf");
 }
 
 @font-face {
 	font-family: "Bahnschrift";
-	src: url("Assets//bahn.ttf");
+	src: url("Assets/Site/bahn.ttf");
 }
 
 * {
     margin: 0; /* fuck margin */
 }
 
-span, img{
+span, img {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -36,19 +36,18 @@ body {
     
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
 }
 
-.Main {
+#Main {
     font-family: "DK";
     color: white;
     width: 100%;
-    height: 100vh;
+    height: 100%;
 
     position: absolute;
 }
 
-.HelloText {
+#HelloText {
     position: absolute;
     left: 50px;
     top: 30px;
@@ -58,15 +57,22 @@ body {
 
 
 #OldSiteLink {
-    font-family: "DK";
     font-size: 20px;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255);
+
+    opacity: 0.6;
 
     position: absolute;
-    top: 37px;
-    left: 200px;
+    top: 75px;
+    left: 50px;
 
     cursor: pointer;
+
+    transition-duration: 0.15s;
+}
+
+#OldSiteLink:hover {
+    opacity: 1;
 }
 
 #SocialsFrame {
@@ -99,12 +105,20 @@ body {
 }
 
 #OwOText {
-    font-family: "DK";
     font-size: 20px;
     color: rgba(255, 255, 255, 0.15);
 
     position: absolute;
     top: 70px;
+    right: 50px;
+}
+
+#CreditText {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.15);
+
+    position: absolute;
+    top: 98px;
     right: 50px;
 }
 
@@ -135,7 +149,6 @@ body {
 }
 
 #DiscordSmallTitle {
-    font-family: "DK";
     font-size: 25px;
     
     position: absolute;
@@ -151,11 +164,17 @@ body {
     top: 20px;
     right: 15px;
 
+    opacity: 0.6;
+
     cursor: pointer;
+    transition-duration: 0.15s;
+}
+
+#DiscordSmallArrow:hover {
+    opacity: 1;
 }
 
 #DiscordSmallState {
-    font-family: "DK";
     font-size: 25px;
     
     position: absolute;
@@ -166,7 +185,7 @@ body {
     transition-duration: 0.15s;
 }
 
-.PresenceFrame {
+#PresenceFrame {
     width: 1300px;
     height: 220px;
 
@@ -178,19 +197,19 @@ body {
     padding-right: 50px;
 }
 
-.BioFrame {
+#BioFrame {
     width: 50%;
     height: inherit;
 
     position: absolute;
 }
 
-.MinokahIcon {
+#MinokahIcon {
     width: 220px;
     height: 220px;
 }
 
-.MinokahText {
+#MinokahText {
     font-family: "Strawberry";
     font-size: 80px;
 
@@ -199,8 +218,7 @@ body {
     top: 20px;
 }
 
-.MinokahSubText {
-    font-family: "DK";
+#MinokahSubText {
     font-size: 32px;
 
     position: absolute;
@@ -208,7 +226,7 @@ body {
     top: 135px;
 }
 
-.DiscordFrame {
+#DiscordFrame {
     width: 50%;
     height: inherit;
     
@@ -217,7 +235,7 @@ body {
     background: linear-gradient(90deg, rgba(232,0,73,1) 0%, rgba(145,0,46,1) 54%);
 }
 
-.DiscordIcon {
+#DiscordIcon {
     width: 180px;
     height: 180px;
     border: 6px solid rgb(30, 30, 30);
@@ -227,8 +245,7 @@ body {
     top: 13px;
 }
 
-.DiscordTitle {
-    font-family: "DK";
+#DiscordTitle {
     font-size: 50px;
     
     position: absolute;
@@ -236,8 +253,7 @@ body {
     top: 40px;
 }
 
-.DiscordState {
-    font-family: "DK";
+#DiscordState {
     font-size: 30px;
     
     position: absolute;
@@ -245,8 +261,7 @@ body {
     top: 105px;
 }
 
-.DiscordTime {
-    font-family: "DK";
+#DiscordTime {
     font-size: 30px;
     
     position: absolute;
@@ -254,7 +269,7 @@ body {
     top: 145px;
 }
 
-.NavigationFrame {
+#NavigationFrame {
     width: 800px;
     height: 65px;
 
@@ -271,19 +286,36 @@ body {
     cursor: pointer;
 }
 
-#ProjectsButton {
-    height: 0px;
-    position: absolute;
-    background: linear-gradient(180deg, rgba(0,131,183,1) 0%, rgba(0,104,145,1) 55%);
-}
-
-#ProjectsLink {
-    font-family: "DK";
+.ButtonLink {
     font-size: 40px;
 
     position: absolute;
+    top: 7px;
+
+    text-align: center;
+}
+
+#ProjectsButton {
+    height: 0px;
+    position: absolute;
+    background: linear-gradient(0deg, rgba(54,194,255,1) 0%, rgb(43, 145, 189) 100%);
+}
+
+#ProjectsLink {
     left: 45px;
-    top: 6px;
+}
+
+#VideosButton {
+    height: 0px;
+    position: absolute;
+    
+    right: 350px;
+    
+    background: linear-gradient(0, rgba(232,0,73,1) 0%, rgba(165,0,46,1) 100%);
+}
+
+#VideosLink {
+    left: 55px;
 }
 
 #GalleryButton {
@@ -291,33 +323,25 @@ body {
     position: absolute;
     right: 50px;
     
-    background: linear-gradient(180deg, rgba(255,106,0,1) 0%, rgba(158,63,0,1) 100%);
+    background: linear-gradient(0deg, rgba(255,133,58,1) 0%, rgb(206, 111, 48) 100%);
 }
 
 #GalleryLink {
-    font-family: "DK";
-    font-size: 40px;
-
-    position: absolute;
     left: 50px;
-    top: 6px;
 }
 
 #ListFrame {
     width: 100%;
     height: 0px;
-    margin-bottom: 50px;
 
     position: relative;
 
     transition-duration: 0.2s;
     
     opacity: 0;
-    background: linear-gradient(180deg, rgba(30,30,30,1) 0%, rgba(10,10,10,1) 100%);
 }
 
 #ListEmptyText {
-    font-family: "DK";
     font-size: 30px;
     text-align: center;
 
@@ -331,39 +355,99 @@ body {
     transition-duration: 0.15s;
 }
 
+#ListCategoryHeader {
+    font-size: 60px;
+
+    position: absolute;
+    left: 50px;
+    top: 20px;
+}
+
+#ListCategorySubtitle {
+    font-size: 25px;
+
+    position: relative;
+    left: 20px;
+    top: -10px;
+
+    opacity: 0.75;
+}
+
 .ListContainer {
-    width: 100%;
+    width: calc(100% - 50px);
     height: 100%;
 
     position: absolute;
 
     opacity: 0;
+    transition-duration: 0.25s;
+    display: flex;
+    flex-wrap: wrap;
+    
+    padding: 50px;
+    padding-top: 105px;
+    padding-right: 0;
+
+    pointer-events: none;
+}
+
+.ListDivider {
+    width: 2px;
+    height: 150px;
+
+    background-color: rgb(50, 50, 50);
+    position: absolute;
+    right: 0;
+    top: 35px;
+}
+
+.ListEntry {
+    width: 280px;
+    height: 260px;
+
+    position: relative;
+
     transition-duration: 0.15s;
+    background-color: transparent;
+    margin-right: 28px;
+    margin-bottom: 30px;
 }
 
-#ProjectsTestImage {
-    width: 330px;
-    height: 220px;
+.ListEntry:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.ListEntryImage {
+    width: 100%;
+    height: 172px;
 
     position: absolute;
-    left: 50px;
-    top: 50px;
 }
 
-#ProjectsTestLabel {
-    font-family: "DK";
+.ListEntryLabel {
     font-size: 30px;
-    text-align: center;
 
     position: absolute;
-    top: 280px;
-    left: 50px;
+    top: 185px;
+    left: 15px;
+}
+
+.ListEntryDate {
+    font-size: 20px;
+
+    opacity: 0.3;
+
+    position: absolute;
+    top: 220px;
+    left: 15px;
+
+    text-indent: 0;
 }
 
 #VectorBackground {
     width: 100%;
     height: 100%;
-    background: url("Assets//pattern2.png");
+    background: url("Assets/Site/pattern.png") repeat-y;
     background-repeat: repeat;
 
     position: absolute;
@@ -373,7 +457,7 @@ body {
 }
 
 @media only screen and (max-width: 1400px) {
-    .DiscordFrame {
+    #DiscordFrame {
         display: none;
     }
 
@@ -381,18 +465,22 @@ body {
         display: initial;
     }
 
-    .PresenceFrame {
+    #PresenceFrame {
         width: 500px;
     }
 
-    .BioFrame {
+    #BioFrame {
         width: 100%;
     }
 }
 
 @media only screen and (max-width: 915px) {
-    .NavigationFrame {
+    #NavigationFrame {
         width: 100%;
+    }
+
+    #VideosButton {
+        right: 410px;
     }
 
     #GalleryButton {
