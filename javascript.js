@@ -119,10 +119,10 @@ function ToggleList(num) {
 
 // handle list entries
 var ProjectsListContents = [
-	{title:"DESOCRETE", img:"DESOCRETE.png", url:"https://github.com/minokah/DESOCRETE", date:"January 26, 2020"},
-	{title:"Brickbreaker", img:"Brickbreaker.png", url:"https://github.com/minokah/Brickbreaker", date:"November 7, 2019"},
-	{title:"Untitled RPG Game", img:"UntitledRPGGame.png", url:"https://github.com/minokah/UntitledRPGGame", date:"January 19, 2019"},
-	{title:"Turing Miami", img:"TuringMiami.png", url:"https://github.com/minokah/TuringMiami", date:"May 27, 2018"}
+	{title:"DESOCRETE", img:"DESOCRETE.png", url:"https://github.com/minokah/DESOCRETE", date:"C++ - January 26, 2020"},
+	{title:"Brickbreaker", img:"Brickbreaker.png", url:"https://github.com/minokah/Brickbreaker", date:"C++ - November 7, 2019"},
+	{title:"Untitled RPG Game", img:"UntitledRPGGame.png", url:"https://github.com/minokah/UntitledRPGGame", date:"C++ - January 19, 2019"},
+	{title:"Turing Miami", img:"TuringMiami.png", url:"https://github.com/minokah/TuringMiami", date:"Turing - May 27, 2018"}
 ];
 
 var VideosListContents = [
