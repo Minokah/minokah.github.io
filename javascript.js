@@ -127,9 +127,7 @@ var ProjectsListContents = [
 
 var VideosListContents = [
 	{title:"12/08/20", img:"120820.png", url:"https://youtu.be/VTNrpgJ9upg", date:"9:32 - August 12, 2020"},
-	{title:"why am i still here", img:"why am i still here.png", url:"https://youtu.be/CYqmbu5nAmQ", date:"2:45 - May 23, 2020"},
 	{title:"monday ax-50 blues", img:"monday ax-50 blues.png", url:"https://youtu.be/oH3jS7TZrTQ", date:"0:42 - May 4, 2020"},
-	{title:"it all started here", img:"it all started here.png", url:"https://youtu.be/S4m9XYupBrs", date:"1:02 - February 20, 2019"},
 	{title:"welcome... to my lair", img:"welcome... to my lair.png", url:"https://youtu.be/e5RsL39hG6c", date:"1:06 - February 5, 2020"},
 	{title:"modern shooter", img:"modern shooter.png", url:"https://youtu.be/lLGRKFUxzDY", date:"3:41 - January 20, 2020"},	
 	{title:"ran out of hdd space", img:"ran out of hdd space.png", url:"https://youtu.be/qqs6E6Pw9Q4", date:"7:31 - November 3, 2019"},
@@ -204,7 +202,7 @@ function RefreshListContent(num, name) {
 		case 1:
 			if (VideosListContents.length <= 0) empty = true;
 			else {
-				VideosContainer.innerHTML += AppendHeaderHTML("Videos", "Hightlights, montages and clips that I've recorded");
+				VideosContainer.innerHTML += AppendHeaderHTML("Videos", "Recorded and edited hightlights, montages and clips");
 				for (i = 0; i != VideosListContents.length; i++) {
 					var title = VideosListContents[i].title;
 					var img = VideosListContents[i].img;
@@ -219,7 +217,7 @@ function RefreshListContent(num, name) {
 		case 2:
 			if (GalleryListContents.length <= 0) empty = true;
 			else {
-				GalleryContainer.innerHTML += AppendHeaderHTML("Gallery", "Art that I've commissioned from artists");
+				GalleryContainer.innerHTML += AppendHeaderHTML("Gallery", "Commissioned artwork from artists");
 				for (i = 0; i != GalleryListContents.length; i++) {
 					var title = GalleryListContents[i].title;
 					var img = GalleryListContents[i].img;
@@ -253,4 +251,19 @@ SteamButton.onclick = function() { window.open("https://steamcommunity.com/id/mi
 var Main = document.getElementById("Main");
 window.onresize = function() {
 	Main.style.height = window.innerHeight;
+
+}
+
+function PageFadeIn() {
+	setTimeout(() => {
+		Main.style.opacity = 1;
+		Main.style.top = 0;
+		window.scrollTo(0, 0);
+	
+		document.body.style.overflow = "hidden";
+	}, 20);
+
+	setTimeout(() => {
+		document.body.style.overflow = "auto";
+	}, 500);
 }

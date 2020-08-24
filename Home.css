@@ -14,7 +14,7 @@
 }
 
 * {
-    margin: 0; /* fuck margin */
+    margin: 0;
 }
 
 span, img {
@@ -44,7 +44,11 @@ body {
     width: 100%;
     height: 100%;
 
+    opacity: 0;
+
     position: absolute;
+    top: 100px;
+    transition-duration: 0.5s;
 }
 
 #HelloText {
@@ -474,16 +478,8 @@ body {
     }
 }
 
-@media only screen and (max-width: 915px) {
-    #NavigationFrame {
-        width: 100%;
-    }
-
-    #VideosButton {
-        right: 410px;
-    }
-
-    #GalleryButton {
-        right: 150px;
+@media only screen and (max-width: 900px) {
+    #Main {
+        width: 900px;
     }
 }
