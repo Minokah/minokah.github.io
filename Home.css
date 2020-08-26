@@ -60,7 +60,7 @@ body {
 }
 
 
-#OldSiteLink {
+.ArrowLink {
     font-size: 20px;
     color: rgba(255, 255, 255);
 
@@ -75,8 +75,13 @@ body {
     transition-duration: 0.15s;
 }
 
-#OldSiteLink:hover {
+.ArrowLink:hover {
     opacity: 1;
+    left: 65px;
+}
+
+#ChangeQuoteLabel {
+    top: 105px;
 }
 
 #SocialsFrame {
@@ -139,7 +144,7 @@ body {
     margin: auto;
 
     transition-duration: 0.15s;
-    display: none;
+    display: initial; /* none */
 }
 
 #DiscordSmallIcon {
@@ -190,7 +195,7 @@ body {
 }
 
 #PresenceFrame {
-    width: 1300px;
+    width: 600px; /* 1300px */
     height: 220px;
 
     margin: auto;
@@ -202,7 +207,7 @@ body {
 }
 
 #BioFrame {
-    width: 50%;
+    width: 100%; /* 50% */
     height: inherit;
 
     position: absolute;
@@ -215,19 +220,27 @@ body {
 
 #MinokahText {
     font-family: "Strawberry";
-    font-size: 80px;
+    font-size: 90px;
 
     position: absolute;
     left: 260px;
-    top: 20px;
+    top: 10px;
 }
 
 #MinokahSubText {
-    font-size: 32px;
+    font-size: 28px;
 
     position: absolute;
     left: 260px;
     top: 135px;
+
+    opacity: 0.65;
+    cursor: pointer;
+    transition-duration: 0.15s;
+}
+
+#MinokahSubText:hover {
+    opacity: 1;
 }
 
 #DiscordFrame {
@@ -237,6 +250,8 @@ body {
     position: relative;
     left: 50%;
     background: linear-gradient(90deg, rgba(232,0,73,1) 0%, rgba(145,0,46,1) 54%);
+
+    display: none; /* inline */
 }
 
 #DiscordIcon {
@@ -461,6 +476,7 @@ body {
 }
 
 @media only screen and (max-width: 1400px) {
+    /*
     #DiscordFrame {
         display: none;
     }
@@ -468,6 +484,7 @@ body {
     #DiscordSmallFrame {
         display: initial;
     }
+    */
 
     #PresenceFrame {
         width: 500px;

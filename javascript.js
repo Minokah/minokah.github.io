@@ -1,3 +1,31 @@
+// edit quote in center
+var MinokahSubText = document.getElementById("MinokahSubText");
+var ChangeQuoteLabel = document.getElementById("ChangeQuoteLabel");
+var CurrentQuote;
+
+var MinokahQuotes = [
+	{quote:"V has come to.", url:"vhascometo.ogg"},
+	{quote:"Gentlemen.", url:"gentlemen.ogg"},
+	{quote:"See? Red! Oh, wait... that's blood.", url:"seered.ogg"},
+	{quote:"Right behind you.", url:"rightbehindyou.ogg"},
+	{quote:"Kept you waiting, huh?", url:"keptyouwaiting.ogg"},
+	{quote:"Mmph mphna mprh.", url:"mmph.ogg"},	
+]
+
+function ChangeQuote() {
+	CurrentQuote = MinokahQuotes[Math.floor(Math.random() * MinokahQuotes.length)];
+	MinokahSubText.innerHTML = CurrentQuote.quote;
+}
+
+ChangeQuoteLabel.onclick = function() { ChangeQuote() };
+
+MinokahSubText.onclick = function PlayQuote() {
+	new Audio("Assets/Sounds/" + CurrentQuote.url).play();
+}
+
+ChangeQuote();
+
+// handle small rich presence frame
 var DiscordSmallFrame = document.getElementById("DiscordSmallFrame");
 var DiscordSmallArrow = document.getElementById("DiscordSmallArrow");
 var DiscordSmallState = document.getElementById("DiscordSmallState");
@@ -20,19 +48,22 @@ DiscordSmallArrow.onclick = function() {
 	}
 }
 
-var ListFrame = document.getElementById("ListFrame");
+// list handler
 var ProjectsButton = document.getElementById("ProjectsButton");
 var GalleryButton = document.getElementById("GalleryButton");
+var VideosButton = document.getElementById("VideosButton");
+
+var ProjectsContainer = document.getElementById("ProjectsContainer");
+var VideosContainer = document.getElementById("VideosContainer");
+var GalleryContainer = document.getElementById("GalleryContainer");
+
+var ListFrame = document.getElementById("ListFrame");
 var ListEmptyText = document.getElementById("ListEmptyText");
 
 var ListActive = false;
 var CurrentActive = 0;
 // 0 projects
 // 1 gallery
-
-var ProjectsContainer = document.getElementById("ProjectsContainer");
-var VideosContainer = document.getElementById("VideosContainer");
-var GalleryContainer = document.getElementById("GalleryContainer");
 
 ProjectsButton.onmouseover = function() { ButtonHandler(ProjectsButton, true, 0); }
 ProjectsButton.onmouseout = function() { ButtonHandler(ProjectsButton, false, 0); }
@@ -238,7 +269,7 @@ function RefreshListContent(num, name) {
 	else ListEmptyText.style.opacity = 0;
 }
 
-
+// external profiles onclick
 var TwitterButton = document.getElementById("TwitterButton");
 var YouTubeButton = document.getElementById("YouTubeButton");
 var SteamButton = document.getElementById("SteamButton");
@@ -247,13 +278,14 @@ TwitterButton.onclick = function() { window.open("http://twitter.com/minokah_");
 YouTubeButton.onclick = function() { window.open("https://www.youtube.com/channel/UCyQkTJLpfR0PEMvDQQH14cw"); }
 SteamButton.onclick = function() { window.open("https://steamcommunity.com/id/minokah/"); }
 
-// :shrug:
+// :shrug: i forgot what this is supposed to do
 var Main = document.getElementById("Main");
 window.onresize = function() {
 	Main.style.height = window.innerHeight;
 
 }
 
+// fadein page
 function PageFadeIn() {
 	setTimeout(() => {
 		Main.style.opacity = 1;
