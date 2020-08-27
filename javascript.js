@@ -1,7 +1,6 @@
 // edit quote in center
 var MinokahSubText = document.getElementById("MinokahSubText");
 var ChangeQuoteLabel = document.getElementById("ChangeQuoteLabel");
-var CurrentQuote;
 
 var MinokahQuotes = [
 	{quote:"V has come to.", url:"vhascometo.ogg"},
@@ -12,15 +11,20 @@ var MinokahQuotes = [
 	{quote:"Mmph mphna mprh.", url:"mmph.ogg"},	
 ]
 
+var CurrentQuote = Math.floor(Math.random() * MinokahQuotes.length);
+var QuoteSound = new Audio(); // attempt to fix mobile audio
+
 function ChangeQuote() {
-	CurrentQuote = MinokahQuotes[Math.floor(Math.random() * MinokahQuotes.length)];
-	MinokahSubText.innerHTML = CurrentQuote.quote;
+	CurrentQuote++;
+	if (CurrentQuote > MinokahQuotes.length - 1) CurrentQuote = 0;
+	MinokahSubText.innerHTML = MinokahQuotes[CurrentQuote].quote;
 }
 
 ChangeQuoteLabel.onclick = function() { ChangeQuote() };
 
 MinokahSubText.onclick = function PlayQuote() {
-	new Audio("Assets/Sounds/" + CurrentQuote.url).play();
+	QuoteSound.src = "Assets/Sounds/" + MinokahQuotes[CurrentQuote].url;
+	QuoteSound.play();
 }
 
 ChangeQuote();
