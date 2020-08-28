@@ -9,6 +9,7 @@ var MinokahQuotes = [
 	{quote:"Right behind you.", url:"rightbehindyou.ogg"},
 	{quote:"Kept you waiting, huh?", url:"keptyouwaiting.ogg"},
 	{quote:"Mmph mphna mprh.", url:"mmph.ogg"},	
+	{quote:"I'm a test quote", url:"mmph.ogg"},	
 ]
 
 var CurrentQuote = Math.floor(Math.random() * MinokahQuotes.length);
