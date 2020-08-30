@@ -1,5 +1,5 @@
 // edit quote in center
-var MinokahSubText = document.getElementById("MinokahSubText");
+var QuoteText = document.getElementById("QuoteText");
 var ChangeQuoteLabel = document.getElementById("ChangeQuoteLabel");
 
 var MinokahQuotes = [
@@ -17,12 +17,12 @@ var QuoteSound = new Audio(); // attempt to fix mobile audio
 function ChangeQuote() {
 	CurrentQuote++;
 	if (CurrentQuote > MinokahQuotes.length - 1) CurrentQuote = 0;
-	MinokahSubText.innerHTML = MinokahQuotes[CurrentQuote].quote;
+	QuoteText.innerHTML = MinokahQuotes[CurrentQuote].quote;
 }
 
 ChangeQuoteLabel.onclick = function() { ChangeQuote() };
 
-MinokahSubText.onclick = function PlayQuote() {
+QuoteText.onclick = function PlayQuote() {
 	QuoteSound.src = "Assets/Sounds/" + MinokahQuotes[CurrentQuote].url;
 	QuoteSound.play();
 }
@@ -83,7 +83,7 @@ VideosButton.onclick = function() { ToggleList(1); }
 GalleryButton.onclick = function() { ToggleList(2); }
 
 function ButtonHandler(obj, toggle, num) {
-	if (toggle || ListActive && CurrentActive == num) obj.style.height = "65px";
+	if (toggle || ListActive && CurrentActive == num) obj.style.height = "55px";
 	else obj.style.height = "0px";
 }
 
@@ -110,7 +110,7 @@ function ToggleList(num) {
 
 	switch (CurrentActive) {
 		case 0: // Projects
-			ProjectsButton.style.height = "65px";
+			ProjectsButton.style.height = "55px";
 			ProjectsContainer.style.opacity = 1;
 			ProjectsContainer.style.pointerEvents = "initial";
 
@@ -119,7 +119,7 @@ function ToggleList(num) {
 			RefreshListContent(CurrentActive, "Projects");
 			break;
 		case 1: // Videos
-			VideosButton.style.height = "65px";
+			VideosButton.style.height = "55px";
 			VideosContainer.style.opacity = 1;
 			VideosContainer.style.pointerEvents = "initial";
 
@@ -128,7 +128,7 @@ function ToggleList(num) {
 			RefreshListContent(CurrentActive, "Videos");
 			break;
 		case 2: // Gallery
-			GalleryButton.style.height = "65px";
+			GalleryButton.style.height = "55px";
 			GalleryContainer.style.opacity = 1;
 			GalleryContainer.style.pointerEvents = "initial";
 
@@ -192,8 +192,8 @@ function ApppendListHTML(type, title, img = "Placeholder.png", url, date, i) {
 		'<img class="ListEntryImage" src="Assets/' + type + '/' + img + '">' +
 		'<span class="';
 
-	if (type == "Gallery") ReturnString += 'ListEntryDate" style="opacity:1; font-size:20px; top:185px">' + title + '</span>' +
-		'<span class="ListEntryDate" style="top:210px"';
+	if (type == "Gallery") ReturnString += 'ListEntryDate" style="opacity:1; font-size:20px; top:165px">' + title + '</span>' +
+		'<span class="ListEntryDate" style="top:190px"';
 	else {
 		ReturnString += 'ListEntryLabel">' + title + '</span>' +
 		'<span class="ListEntryDate"';
@@ -293,13 +293,5 @@ window.onresize = function() {
 function PageFadeIn() {
 	setTimeout(() => {
 		Main.style.opacity = 1;
-		Main.style.top = 0;
-		window.scrollTo(0, 0);
-	
-		document.body.style.overflow = "hidden";
 	}, 20);
-
-	setTimeout(() => {
-		document.body.style.overflow = "auto";
-	}, 500);
 }
