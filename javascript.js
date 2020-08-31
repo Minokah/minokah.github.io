@@ -47,29 +47,6 @@ QuoteText.onclick = function PlayQuote() {
 
 ChangeQuote();
 
-// handle small rich presence frame
-var DiscordSmallFrame = document.getElementById("DiscordSmallFrame");
-var DiscordSmallArrow = document.getElementById("DiscordSmallArrow");
-var DiscordSmallState = document.getElementById("DiscordSmallState");
-var DiscordSmallActive = false;
-
-DiscordSmallArrow.onclick = function() {
-	DiscordSmallActive = !DiscordSmallActive;
-	
-	if (DiscordSmallActive) {
-		DiscordSmallFrame.style.height = "100px";
-		DiscordSmallState.style.opacity = 1;
-
-		DiscordSmallArrow.style.transform = "rotate(180deg)";
-	}
-	else {
-		DiscordSmallFrame.style.height = "50px";
-		DiscordSmallState.style.opacity = 0;
-
-		DiscordSmallArrow.style.transform = "";
-	}
-}
-
 // list handler
 var ProjectsButton = document.getElementById("ProjectsButton");
 var GalleryButton = document.getElementById("GalleryButton");
@@ -314,12 +291,68 @@ function PageFadeIn() {
 	}, 20);
 }
 
-// read file for presenceg
+// handle small rich presence frame
+var DiscordSmallFrame = document.getElementById("DiscordSmallFrame");
+var DiscordSmallTitle = document.getElementById("DiscordSmallTitle");
+var DiscordSmallArrow = document.getElementById("DiscordSmallArrow");
+var DiscordSmallState = document.getElementById("DiscordSmallState");
+var DiscordSmallActive = false;
 
+DiscordSmallArrow.onclick = function() {
+	DiscordSmallActive = !DiscordSmallActive;
+	
+	if (DiscordSmallActive) {
+		DiscordSmallFrame.style.height = "100px";
+		DiscordSmallState.style.opacity = 1;
+
+		DiscordSmallArrow.style.transform = "rotate(180deg)";
+	}
+	else {
+		DiscordSmallFrame.style.height = "50px";
+		DiscordSmallState.style.opacity = 0;
+
+		DiscordSmallArrow.style.transform = "";
+	}
+}
+
+function ReturnTime(e) {
+	var epoch = Math.round(new Date().getTime() / 1000) - e;
+	var hrs = Math.round(epoch / 3600);
+	epoch = epoch % 3600;
+	var mins  = Math.round(epoch / 60);
+	epoch = epoch % 60;
+	var secs = epoch;
+
+	if (mins < 10) mins = "0" + mins + ":";
+	else mins = mins + ":";
+	if (hrs < 10) hrs = "0" + hrs + ":";
+	else hrs = hrs + ":";
+
+	if (hrs == 0) hrs = "";
+	if (mins == 0) {
+		mins = "";
+		secs = "Just started playing";
+	}
+	else {
+		if (secs < 10) secs = "0" + secs;
+		secs += " Elapsed";
+	}
+
+	return hrs + mins + secs;
+}
+
+var parsedTime;
+
+// read file for presence
 fetch("https://minokah.github.io/Assets/Presence/data.txt")
 	.then(response => response.text())
 	.then(data => {
 		var parsed = data.split("\n");
-	console.log(parsed[0]);
-	console.log(parsed[1]);
+		DiscordSmallTitle.innerHTML = parsed[0];
+		parsedTime = parsed[1];
+		DiscordSmallState.innerHTML = ReturnTime(parsedTime);
 });
+
+setInterval(function() {
+	DiscordSmallState.innerHTML = ReturnTime(parsedTime);
+}, 1000);
