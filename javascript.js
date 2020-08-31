@@ -3,13 +3,31 @@ var QuoteText = document.getElementById("QuoteText");
 var ChangeQuoteLabel = document.getElementById("ChangeQuoteLabel");
 
 var MinokahQuotes = [
-	{quote:"V has come to.", url:"vhascometo.ogg"},
 	{quote:"Gentlemen.", url:"gentlemen.ogg"},
 	{quote:"See? Red! Oh, wait... that's blood.", url:"seered.ogg"},
 	{quote:"Right behind you.", url:"rightbehindyou.ogg"},
-	{quote:"Kept you waiting, huh?", url:"keptyouwaiting.ogg"},
 	{quote:"Mmph mphna mprh.", url:"mmph.ogg"},	
+	{quote:"Kept you waiting, huh?", url:"keptyouwaiting.ogg"},
+	{quote:"V has come to.", url:"vhascometo.ogg"},
+	{quote:"They played us like a damn fiddle!", url:"damnfiddle.ogg"}
 ]
+
+// fisher-yates shuffle
+function shuffle(array) {
+	var m = array.length, t, i;
+
+	while (m) {
+	  i = Math.floor(Math.random() * m--);
+
+	  t = array[m];
+	  array[m] = array[i];
+	  array[i] = t;
+	}
+  
+	return array;
+  }
+
+MinokahQuotes = shuffle(MinokahQuotes);
 
 var CurrentQuote = Math.floor(Math.random() * MinokahQuotes.length);
 var QuoteSound = new Audio(); // attempt to fix mobile audio
@@ -295,3 +313,11 @@ function PageFadeIn() {
 		Main.style.opacity = 1;
 	}, 20);
 }
+
+// read file for presence
+fetch("Assets/Presence/data.txt")
+	.then(response => response.text())
+	.then(data => {
+	// Do something with your data
+	console.log(data);
+});
