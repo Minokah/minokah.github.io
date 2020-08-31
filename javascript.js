@@ -315,7 +315,7 @@ function PageFadeIn() {
 }
 
 // read file for presence
-fetch("Assets/Presence/data.txt")
+fetch("https://minokah.github.io/Assets/Presence/data.txt")
 	.then(response => response.text())
 	.then(data => {
 	// Do something with your data
