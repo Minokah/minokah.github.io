@@ -314,10 +314,12 @@ function PageFadeIn() {
 	}, 20);
 }
 
-// read file for presence
+// read file for presenceg
+
 fetch("https://minokah.github.io/Assets/Presence/data.txt")
 	.then(response => response.text())
 	.then(data => {
-	// Do something with your data
-	console.log(data);
+		var parsed = data.split("\n");
+	console.log(parsed[0]);
+	console.log(parsed[1]);
 });
