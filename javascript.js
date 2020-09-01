@@ -323,22 +323,24 @@ function ReturnTime(e) {
 	epoch = epoch % 60;
 	var secs = epoch;
 
-	if (mins < 10) mins = "0" + mins + ":";
-	else mins = mins + ":";
-	if (hrs < 10) hrs = "0" + hrs + ":";
-	else hrs = hrs + ":";
+	var fSecs = secs, fMins = mins, fHrs = hrs;
 
-	if (hrs == 0) hrs = "";
+	if (mins < 10) fMins = "0" + fMins + ":";
+	else fMins = mins + ":";
+	if (hrs < 10) fHrs = "0" + fHrs + ":";
+	else fHrs = hrs + ":";
+
+	if (hrs == 0) fHrs = "";
 	if (mins == 0) {
-		mins = "";
-		secs = "Just started playing";
+		fMins = "";
+		fSecs = "Just started playing";
 	}
 	else {
-		if (secs < 10) secs = "0" + secs;
-		secs += " Elapsed";
+		if (secs < 10) fSecs = "0" + secs;
+		fSecs += " Elapsed";
 	}
 
-	return hrs + mins + secs;
+	return fHrs + fMins + fSecs;
 }
 
 var parsedTitle, parsedTime;
