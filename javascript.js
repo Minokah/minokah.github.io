@@ -348,7 +348,7 @@ fetch("https://minokah.github.io/Assets/Presence/data.txt")
 	.then(response => response.text())
 	.then(data => {
 		var parsed = data.split("\n");
-		paredTitle = parsed[0];
+		parsedTitle = parsed[0];
 		parsedTime = parsed[1];
 		DiscordSmallTitle.innerHTML = paredTitle;
 
