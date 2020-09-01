@@ -350,7 +350,7 @@ fetch("https://minokah.github.io/Assets/Presence/data.txt")
 		var parsed = data.split("\n");
 		parsedTitle = parsed[0];
 		parsedTime = parsed[1];
-		DiscordSmallTitle.innerHTML = paredTitle;
+		DiscordSmallTitle.innerHTML = parsedTitle;
 
 		if (parsedTitle != "Presence Inactive") DiscordSmallState.innerHTML = ReturnTime(parsedTime);
 		else DiscordSmallState.innerHTML = "Presence not active or something";
