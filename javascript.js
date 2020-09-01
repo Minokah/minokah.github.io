@@ -341,18 +341,21 @@ function ReturnTime(e) {
 	return hrs + mins + secs;
 }
 
-var parsedTime;
+var parsedTitle, parsedTime;
 
 // read file for presence
 fetch("https://minokah.github.io/Assets/Presence/data.txt")
 	.then(response => response.text())
 	.then(data => {
 		var parsed = data.split("\n");
-		DiscordSmallTitle.innerHTML = parsed[0];
+		paredTitle = parsed[0];
 		parsedTime = parsed[1];
-		DiscordSmallState.innerHTML = ReturnTime(parsedTime);
+		DiscordSmallTitle.innerHTML = paredTitle;
+
+		if (parsedTitle != "") DiscordSmallState.innerHTML = ReturnTime(parsedTime);
+		else DiscordSmallState.innerHTML = "Presence not active or something";
 });
 
 setInterval(function() {
-	DiscordSmallState.innerHTML = ReturnTime(parsedTime);
+	if (parsedTitle != "") DiscordSmallState.innerHTML = ReturnTime(parsedTime);
 }, 1000);
