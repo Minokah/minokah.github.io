@@ -352,10 +352,10 @@ fetch("https://minokah.github.io/Assets/Presence/data.txt")
 		parsedTime = parsed[1];
 		DiscordSmallTitle.innerHTML = paredTitle;
 
-		if (parsedTitle != "") DiscordSmallState.innerHTML = ReturnTime(parsedTime);
+		if (parsedTitle != "Presence Inactive") DiscordSmallState.innerHTML = ReturnTime(parsedTime);
 		else DiscordSmallState.innerHTML = "Presence not active or something";
 });
 
 setInterval(function() {
-	if (parsedTitle != "") DiscordSmallState.innerHTML = ReturnTime(parsedTime);
+	if (parsedTitle != "Presence Inactive") DiscordSmallState.innerHTML = ReturnTime(parsedTime);
 }, 1000);
