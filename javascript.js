@@ -316,10 +316,10 @@ DiscordSmallArrow.onclick = function() {
 }
 
 function ReturnTime(e) {
-	var epoch = Math.round(new Date().getTime() / 1000) - e;
-	var hrs = Math.round(epoch / 3600);
+	var epoch = Math.floor(new Date().getTime() / 1000) - e;
+	var hrs = Math.floor(epoch / 3600);
 	epoch = epoch % 3600;
-	var mins  = Math.round(epoch / 60);
+	var mins  = Math.floor(epoch / 60);
 	epoch = epoch % 60;
 	var secs = epoch;
 
@@ -353,7 +353,7 @@ fetch("https://minokah.github.io/Assets/Presence/data.txt")
 		DiscordSmallTitle.innerHTML = parsedTitle;
 
 		if (parsedTitle != "Presence Inactive") DiscordSmallState.innerHTML = ReturnTime(parsedTime);
-		else DiscordSmallState.innerHTML = "Presence not active or something";
+		else DiscordSmallState.innerHTML = "Offline probably.";
 });
 
 setInterval(function() {
