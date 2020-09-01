@@ -344,6 +344,7 @@ function ReturnTime(e) {
 }
 
 var parsedTitle, parsedTime;
+var displayArrow = true;
 
 // read file for presence
 fetch("https://minokah.github.io/Assets/Presence/data.txt")
@@ -354,10 +355,18 @@ fetch("https://minokah.github.io/Assets/Presence/data.txt")
 		parsedTime = parsed[1];
 		DiscordSmallTitle.innerHTML = parsedTitle;
 
-		if (parsedTitle != "Presence Inactive") DiscordSmallState.innerHTML = ReturnTime(parsedTime);
-		else DiscordSmallState.innerHTML = "Offline probably.";
+		if (parsedTitle == "Offline" || parsedTitle == "Online" || parsedTitle == "Away" || parsedTitle == "Presence Inactive") {
+			displayArrow = false;
+
+			if (parsedTitle == "Offline") DiscordSmallFrame.style.background = "linear-gradient(90deg, rgba(80,80,80,1) 9%, rgba(50,50,50,1) 53%)";
+			if (parsedTitle == "Online") DiscordSmallFrame.style.background = "linear-gradient(90deg, rgba(124,223,67,1) 9%, rgba(71,182,11,1) 66%)";
+			if (parsedTitle == "Away") DiscordSmallFrame.style.background = "linear-gradient(90deg, rgba(255,204,32,1) 44%, rgba(187,153,36,1) 77%)";
+		}
+		else DiscordSmallState.innerHTML = ReturnTime(parsedTime);
+
+		if (!displayArrow) DiscordSmallArrow.style.display = "none";
 });
 
 setInterval(function() {
-	if (parsedTitle != "Presence Inactive") DiscordSmallState.innerHTML = ReturnTime(parsedTime);
+	DiscordSmallState.innerHTML = ReturnTime(parsedTime);
 }, 1000);
