@@ -176,15 +176,15 @@ var VideosListContents = [
 var GalleryListContents = [
 	{title:"Fullbody by @Fleurfurr", img:"Fleurfurr.png", url:"https://twitter.com/Fleurfurr/status/1297279124491337729", date:"August 18, 2020"},
 	{title:"Icon by @Shlimaz", img:"Shlimaz.png", url:"https://twitter.com/Shlimaz/status/1294680255555342339", date:"August 13, 2020"},
-	{title:"Feral full body by @Ferwildir", img:"Ferwildir.png", url:"Assets/Gallery/Source/Ferwildir.jpg", date:"June 21, 2020"},
-	{title:"Chibi sticker by @Olive_Cow", img:"Olive_Cow.png", url:"Assets/Gallery/Source/Olive_Cow.png", date:"June 8, 2020"},
-	{title:"Icon by @PureRubyDragon", img:"PureRubyDragon.png", url:"Assets/Gallery/Source/PureRubyDragon.png", date:"February 15, 2020"},
+	{title:"Feral full body by @Ferwildir", img:"Ferwildir.png", url:"Assets/Preview/Gallery/Source/Ferwildir.jpg", date:"June 21, 2020"},
+	{title:"Chibi sticker by @Olive_Cow", img:"Olive_Cow.png", url:"Assets/Preview/Gallery/Source/Olive_Cow.png", date:"June 8, 2020"},
+	{title:"Icon by @PureRubyDragon", img:"PureRubyDragon.png", url:"Assets/Preview/Gallery/Source/PureRubyDragon.png", date:"February 15, 2020"},
 	{title:"Icon by @faunbutt", img:"faunbutt.png", url:"https://www.furaffinity.net/view/34197779/", date:"December 13, 2019"}
 ];
 
 function ApppendListHTML(type, title, img = "Placeholder.png", url, date, i) {
  	var ReturnString = '<div class="ListEntry" onclick="window.open(\'' + url + '\')" style="cursor: pointer">' +
-		'<img class="ListEntryImage" src="Assets/' + type + '/' + img + '">' +
+		'<img class="ListEntryImage" src="Assets/Preview/' + type + '/' + img + '">' +
 		'<span class="';
 
 	if (type == "Gallery") ReturnString += 'ListEntryDate" style="opacity:1; font-size:20px; top:165px">' + title + '</span>' +
