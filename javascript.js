@@ -377,34 +377,6 @@ DiscordSmallCLink.onmouseleave = function() {
 
 DiscordSmallCLink.onclick = function() { ResetDiscInfoBox(); }
 
-function ReturnTime(e) {
-	var epoch = Math.floor(new Date().getTime() / 1000) - e;
-	var hrs = Math.floor(epoch / 3600);
-	epoch = epoch % 3600;
-	var mins  = Math.floor(epoch / 60);
-	epoch = epoch % 60;
-	var secs = epoch;
-
-	var fSecs = secs, fMins = mins, fHrs = hrs;
-
-	if (mins < 10) fMins = "0" + fMins + ":";
-	else fMins = mins + ":";
-	if (hrs < 10) fHrs = "0" + fHrs + ":";
-	else fHrs = hrs + ":";
-
-	if (hrs == 0) fHrs = "";
-	if (mins == 0) {
-		fMins = "";
-		fSecs = "Just started playing";
-	}
-	else {
-		if (secs < 10) fSecs = "0" + secs;
-		fSecs += " Elapsed";
-	}
-
-	return fHrs + fMins + fSecs;
-}
-
 var ParsedTitle, ParsedTime;
 var PresenceInactive = false;
 
@@ -414,7 +386,7 @@ fetch("https://minokah.github.io/Assets/Presence/data.txt")
 	.then(data => {
 		var parsed = data.split("\n");
 		ParsedTitle = parsed[0];
-		parsedTime = parsed[1];
+		ParsedState = "Nothing to Show";
 		DiscordSmallTitle.innerHTML = ParsedTitle;
 
 		if (ParsedTitle == "Offline" || ParsedTitle == "Online" || ParsedTitle == "Away" || ParsedTitle == "Presence Inactive") {
@@ -426,9 +398,9 @@ fetch("https://minokah.github.io/Assets/Presence/data.txt")
 			
 			DiscordSmallState.innerHTML = "Nothing to show";
 		}
-		else DiscordSmallState.innerHTML = ReturnTime(ParsedTime);
+		else DiscordSmallState.innerHTML = ReturnTime(ParsedState);
 });
 
 setInterval(function() {
-	if (!PresenceInactive) DiscordSmallState.innerHTML = ReturnTime(ParsedTime);
+	if (!PresenceInactive) DiscordSmallState.innerHTML = ReturnTime(ParsedState);
 }, 1000);
