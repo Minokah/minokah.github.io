@@ -398,9 +398,9 @@ fetch("https://minokah.github.io/Assets/Presence/data.txt")
 			
 			DiscordSmallState.innerHTML = "Nothing to show";
 		}
-		else DiscordSmallState.innerHTML = ReturnTime(ParsedState);
+		else DiscordSmallState.innerHTML = ParsedState;
 });
 
 setInterval(function() {
-	if (!PresenceInactive) DiscordSmallState.innerHTML = ReturnTime(ParsedState);
+	if (!PresenceInactive) DiscordSmallState.innerHTML = ParsedState;
 }, 1000);
