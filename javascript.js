@@ -1,15 +1,16 @@
 // edit quote in center
 var QuoteText = document.getElementById("QuoteText");
+var QuoteAuthor = document.getElementById("QuoteAuthor");
 var ChangeQuoteLabel = document.getElementById("ChangeQuoteLabel");
 
 var MinokahQuotes = [
-	{quote:"Gentlemen.", url:"gentlemen.ogg"},
-	{quote:"See? Red! Oh, wait... that's blood.", url:"seered.ogg"},
-	{quote:"Right behind you.", url:"rightbehindyou.ogg"},
-	{quote:"Mmph mphna mprh.", url:"mmph.ogg"},	
-	{quote:"Kept you waiting, huh?", url:"keptyouwaiting.ogg"},
-	{quote:"V has come to.", url:"vhascometo.ogg"},
-	{quote:"They played us like a damn fiddle!", url:"damnfiddle.ogg"}
+	{quote:"Gentlemen.", from:"BLU Spy (Team Fortress 2)", url:"gentlemen.ogg"},
+	{quote:"See? Red! Oh, wait... that's blood.", from:"Soldier (Team Fortress 2)", url:"seered.ogg"},
+	{quote:"Right behind you.", from:"RED Spy (Team Fortress 2)", url:"rightbehindyou.ogg"},
+	{quote:"Mmph mphna mprh.", from:"Pyro (Team Fortress 2)", url:"mmph.ogg"},	
+	{quote:"Kept you waiting, huh?", from:"Snake (METAL GEAR SOLID)", url:"keptyouwaiting.ogg"},
+	{quote:"V has come to.", from:"iDroid (METAL GEAR SOLID V: TPP)", url:"vhascometo.ogg"},
+	{quote:"They played us like a damn fiddle!", from:"Kazuhira Miller (METAL GEAR SOLID V: GZ)", url:"damnfiddle.ogg"}
 ]
 
 // fisher-yates shuffle
@@ -30,12 +31,13 @@ function shuffle(array) {
 MinokahQuotes = shuffle(MinokahQuotes);
 
 var CurrentQuote = Math.floor(Math.random() * MinokahQuotes.length);
-var QuoteSound = new Audio(); // attempt to fix mobile audio
+var QuoteSound = new Audio();
 
 function ChangeQuote() {
 	CurrentQuote++;
 	if (CurrentQuote > MinokahQuotes.length - 1) CurrentQuote = 0;
 	QuoteText.innerHTML = MinokahQuotes[CurrentQuote].quote;
+	QuoteAuthor.innerHTML = MinokahQuotes[CurrentQuote].from;
 }
 
 ChangeQuoteLabel.onclick = function() { ChangeQuote() };
@@ -62,7 +64,8 @@ var ListEmptyText = document.getElementById("ListEmptyText");
 var ListActive = false;
 var CurrentActive = 0;
 // 0 projects
-// 1 gallery
+// 1 videos
+// 2 gallery
 
 ProjectsButton.onmouseover = function() { ButtonHandler(ProjectsButton, true, 0); }
 ProjectsButton.onmouseout = function() { ButtonHandler(ProjectsButton, false, 0); }
@@ -135,7 +138,7 @@ function ToggleList(num) {
 
 	if (ListActive) {
 		ListFrame.style.opacity = 1;
-		ListFrame.style.height = "320px";
+		ListFrame.style.height = "294px";
 	}
 	else {
 		ListFrame.style.opacity = 0;
@@ -277,13 +280,6 @@ TwitterButton.onclick = function() { window.open("http://twitter.com/minokah_");
 YouTubeButton.onclick = function() { window.open("https://www.youtube.com/channel/UCyQkTJLpfR0PEMvDQQH14cw"); }
 SteamButton.onclick = function() { window.open("https://steamcommunity.com/id/minokah/"); }
 
-// :shrug: i forgot what this is supposed to do
-var Main = document.getElementById("Main");
-window.onresize = function() {
-	Main.style.height = window.innerHeight;
-
-}
-
 // fadein page
 function PageFadeIn() {
 	setTimeout(() => {
@@ -296,7 +292,30 @@ var DiscordSmallFrame = document.getElementById("DiscordSmallFrame");
 var DiscordSmallTitle = document.getElementById("DiscordSmallTitle");
 var DiscordSmallArrow = document.getElementById("DiscordSmallArrow");
 var DiscordSmallState = document.getElementById("DiscordSmallState");
+var DiscordSmallILink = document.getElementById("DiscordSmallILink");
+var DiscordSmallIText = document.getElementById("DiscordSmallIText");
+var DiscordSmallCLink = document.getElementById("DiscordSmallCLink");
 var DiscordSmallActive = false;
+var DiscordInfoActive = false;
+
+function ResetDiscInfoBox() {
+	DiscordInfoActive = false;
+
+	DiscordSmallILink.style.top = "62px";
+	DiscordSmallILink.style.fontSize = "17px";
+	DiscordSmallILink.style.cursor = "pointer";
+
+	DiscordSmallFrame.style.height = "100px";
+	DiscordSmallState.style.opacity = 1;
+
+	DiscordSmallCLink.style.opacity = 0;
+	DiscordSmallCLink.style.cursor = "default";
+
+	DiscordSmallIText.style.opacity = 0;
+
+	if (DiscordSmallActive) DiscordSmallILink.style.opacity = 0.35;
+	else DiscordSmallILink.style.opacity = 0;
+}
 
 DiscordSmallArrow.onclick = function() {
 	DiscordSmallActive = !DiscordSmallActive;
@@ -304,16 +323,59 @@ DiscordSmallArrow.onclick = function() {
 	if (DiscordSmallActive) {
 		DiscordSmallFrame.style.height = "100px";
 		DiscordSmallState.style.opacity = 1;
+		DiscordSmallILink.style.opacity = 0.35;
 
 		DiscordSmallArrow.style.transform = "rotate(180deg)";
 	}
 	else {
+		ResetDiscInfoBox();
+
 		DiscordSmallFrame.style.height = "50px";
 		DiscordSmallState.style.opacity = 0;
+		DiscordSmallILink.style.opacity = 0;
 
 		DiscordSmallArrow.style.transform = "";
+		DiscordSmallInfoActive = false;
 	}
 }
+
+// workaround for DiscordSmallILink:hover not working with js
+DiscordSmallILink.onclick = function() {
+	DiscordInfoActive = true;
+
+	DiscordSmallILink.style.top = "58px";
+	DiscordSmallILink.style.fontSize = "25px";
+	DiscordSmallILink.style.cursor = "default";
+
+	DiscordSmallFrame.style.height = "170px";
+	DiscordSmallState.style.opacity = 0;
+
+	DiscordSmallCLink.style.opacity = 0.35;
+	DiscordSmallCLink.style.cursor = "pointer";
+
+	DiscordSmallIText.style.opacity = 0.75;
+}
+
+DiscordSmallILink.onmouseover = function() {
+	if (DiscordSmallActive) DiscordSmallILink.style.opacity = 1;
+}
+
+DiscordSmallILink.onmouseleave = function() {
+	if (DiscordSmallActive) DiscordSmallILink.style.opacity = 0.35;
+	else DiscordSmallILink.style.opacity = 0;
+
+	if (DiscordInfoActive) DiscordSmallILink.style.opacity = 1;
+}
+
+DiscordSmallCLink.onmouseover = function() {
+	if (DiscordInfoActive) DiscordSmallCLink.style.opacity = 1;
+}
+
+DiscordSmallCLink.onmouseleave = function() {
+	if (DiscordInfoActive) DiscordSmallCLink.style.opacity = 0.35;
+}
+
+DiscordSmallCLink.onclick = function() { ResetDiscInfoBox(); }
 
 function ReturnTime(e) {
 	var epoch = Math.floor(new Date().getTime() / 1000) - e;
@@ -343,30 +405,30 @@ function ReturnTime(e) {
 	return fHrs + fMins + fSecs;
 }
 
-var parsedTitle, parsedTime;
-var displayArrow = true;
+var ParsedTitle, ParsedTime;
+var PresenceInactive = false;
 
 // read file for presence
 fetch("https://minokah.github.io/Assets/Presence/data.txt")
 	.then(response => response.text())
 	.then(data => {
 		var parsed = data.split("\n");
-		parsedTitle = parsed[0];
+		ParsedTitle = parsed[0];
 		parsedTime = parsed[1];
-		DiscordSmallTitle.innerHTML = parsedTitle;
+		DiscordSmallTitle.innerHTML = ParsedTitle;
 
-		if (parsedTitle == "Offline" || parsedTitle == "Online" || parsedTitle == "Away" || parsedTitle == "Presence Inactive") {
-			displayArrow = false;
+		if (ParsedTitle == "Offline" || ParsedTitle == "Online" || ParsedTitle == "Away" || ParsedTitle == "Presence Inactive") {
+			PresenceInactive = true;
 
-			if (parsedTitle == "Offline") DiscordSmallFrame.style.background = "linear-gradient(90deg, rgba(80,80,80,1) 9%, rgba(50,50,50,1) 53%)";
-			if (parsedTitle == "Online") DiscordSmallFrame.style.background = "linear-gradient(90deg, rgba(124,223,67,1) 9%, rgba(71,182,11,1) 66%)";
-			if (parsedTitle == "Away") DiscordSmallFrame.style.background = "linear-gradient(90deg, rgba(255,204,32,1) 44%, rgba(187,153,36,1) 77%)";
+			if (ParsedTitle == "Offline") DiscordSmallFrame.style.background = "linear-gradient(90deg, rgba(80,80,80,1) 9%, rgba(50,50,50,1) 53%)";
+			if (ParsedTitle == "Online") DiscordSmallFrame.style.background = "linear-gradient(90deg, rgba(124,223,67,1) 9%, rgba(71,182,11,1) 66%)";
+			if (ParsedTitle == "Away") DiscordSmallFrame.style.background = "linear-gradient(90deg, rgba(255,204,32,1) 44%, rgba(187,153,36,1) 77%)";
+			
+			DiscordSmallState.innerHTML = "Nothing to show";
 		}
-		else DiscordSmallState.innerHTML = ReturnTime(parsedTime);
-
-		if (!displayArrow) DiscordSmallArrow.style.display = "none";
+		else DiscordSmallState.innerHTML = ReturnTime(ParsedTime);
 });
 
 setInterval(function() {
-	DiscordSmallState.innerHTML = ReturnTime(parsedTime);
+	if (!PresenceInactive) DiscordSmallState.innerHTML = ReturnTime(ParsedTime);
 }, 1000);

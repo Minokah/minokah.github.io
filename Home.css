@@ -13,6 +13,12 @@
 	src: url("Assets/Site/bahn.ttf");
 }
 
+@font-face {
+	font-family: "Roboto";
+	src: url("Assets/Site/roboto.ttf");
+}
+
+
 * {
     margin: 0;
 }
@@ -207,6 +213,38 @@ body {
     transition-duration: 0.15s;
 }
 
+.DiscordSmallLink {
+    font-size: 17px;
+
+    position: absolute;
+    top: 62px;
+    
+    opacity: 0;
+    transition-duration: 0.15s;
+    cursor: pointer;
+}
+
+#DiscordSmallILink {
+    right: 15px;
+}
+
+#DiscordSmallCLink {
+    left: 15px;
+    cursor: default;
+}
+
+#DiscordSmallIText {
+    font-size: 17px;
+    font-family: "Roboto";
+
+    position: absolute;
+    top: 95px;
+    left: 15px;
+    
+    opacity: 0;
+    transition-duration: 0.15s;
+}
+
 #BannerFrame {
     width: 100%;
     height: 380px;
@@ -247,16 +285,26 @@ body {
     font-size: 28px;
 
     position: absolute;
-    top: 150px;
+    top: 155px;
     right: 340px;
 
-    opacity: 0.65;
+    opacity: 0.75;
     cursor: pointer;
     transition-duration: 0.15s;
 }
 
 #QuoteText:hover {
     opacity: 1;
+}
+
+#QuoteAuthor {
+    font-size: 20px;
+
+    position: absolute;
+    top: 130px;
+    right: 340px;
+
+    opacity: 0.3;
 }
 
 #QuoteLine {
@@ -266,25 +314,6 @@ body {
     position: absolute;
     top: 190px;
     right: 340px;
-}
-
-#PresenceFrame {
-    width: 600px; /* 1300px */
-    height: 220px;
-
-    margin: auto;
-    margin-top: 220px;
-    margin-bottom: 55px;
-    position: relative;
-    padding-left: 50px;
-    padding-right: 50px;
-}
-
-#BioFrame {
-    width: 100%; /* 50% */
-    height: inherit;
-
-    position: absolute;
 }
 
 #MinokahIcon {
@@ -310,57 +339,12 @@ body {
     top: 250px;
 }
 
-#DiscordFrame {
-    width: 50%;
-    height: inherit;
-    
-    position: relative;
-    left: 50%;
-    background: linear-gradient(90deg, rgba(232,0,73,1) 0%, rgba(145,0,46,1) 54%);
-
-    display: none; /* inline */
-}
-
-#DiscordIcon {
-    width: 180px;
-    height: 180px;
-    border: 6px solid rgb(30, 30, 30);
-
-    position: absolute;
-    left: 30px;
-    top: 13px;
-}
-
-#DiscordTitle {
-    font-size: 50px;
-    
-    position: absolute;
-    left: 250px;
-    top: 40px;
-}
-
-#DiscordState {
-    font-size: 30px;
-    
-    position: absolute;
-    left: 250px;
-    top: 105px;
-}
-
-#DiscordTime {
-    font-size: 30px;
-    
-    position: absolute;
-    left: 250px;
-    top: 145px;
-}
-
 #NavigationFrame {
     width: 720px;
     height: 55px;
 
     position: relative;
-    top: -100px;
+    top: 395px;
 
     margin: auto;
     padding-left: 50px;
@@ -422,7 +406,7 @@ body {
     height: 0px;
 
     position: relative;
-    top: -100px;
+    top: 395px;
 
     transition-duration: 0.2s;
     
@@ -543,26 +527,6 @@ body {
 
     pointer-events: none;
 }
-/*
-@media only screen and (max-width: 1400px) {
-    /*
-    #DiscordFrame {
-        display: none;
-    }
-
-    #DiscordSmallFrame {
-        display: initial;
-    }
-
-    #PresenceFrame {
-        width: 500px;
-    }
-
-    #BioFrame {
-        width: 100%;
-    }
-}
-*/
 
 @media only screen and (max-width: 1150px) {
     #Main {
