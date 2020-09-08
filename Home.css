@@ -141,13 +141,6 @@ body {
 #ArtworkText {
     opacity: 0.25;
 
-    top: 50px;
-    right: 30px;
-}
-
-#PSText {
-    opacity: 0.25;
-
     left: 20px;
     bottom: 20px;
 }
@@ -396,7 +389,7 @@ body {
 }
 
 #ProjectsLink {
-    left: 45px;
+    left: 43px;
 }
 
 #VideosButton {
@@ -409,7 +402,7 @@ body {
 }
 
 #VideosLink {
-    left: 55px;
+    left: 53px;
 }
 
 #GalleryButton {
@@ -421,7 +414,7 @@ body {
 }
 
 #GalleryLink {
-    left: 50px;
+    left: 47px;
 }
 
 #ListFrame {
