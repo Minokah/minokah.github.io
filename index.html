@@ -1,91 +1,203 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="Home.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
-		<link rel="shortcut icon" href="Assets/Site/among.png">
+<html class="no-js" lang="en">
+<head>
 
-		<!-- Google / Search Engine Tags -->
-		<meta itemprop="name" content="minokah's silly site">
-		<meta itemprop="description" content="hello there, i am a website description">
-		<meta itemprop="image" content="http://minokah.github.io/Assets/Site/me.png">
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Home | Minokah</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-		<!-- Facebook Meta Tags -->
-		<meta property="og:url" content="https://minokah.github.io">
-		<meta property="og:type" content="website">
-		<meta property="og:title" content="minokah's silly site">
-		<meta property="og:description" content="hello there, i am a website description">
-		<meta property="og:image" content="http://minokah.github.io/Assets/Site/me.png">
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<!-- Twitter Meta Tags -->
-		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="minokah's silly site">
-		<meta name="twitter:description" content="hello there, i am a website description! this is where i showcase my projects and artwork that i've commissioned c:">
-		<meta name="twitter:image" content="http://minokah.github.io/Assets/Site/me.png">
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
 
-		<meta name="theme-color" content="#ff00ff">
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
 
-		<title>minokah says hello there</title>
-	</head>
-	
-	<body onload="PageFadeIn()">
-		<div id="Main">
-			<div id="Topbar">
-				<span id="HelloText">Hello There</span>
-				<div id="SocialsFrame">
-					<img id="TwitterButton" class="SocialsButton" src="Assets/Site/twitter.png">
-					<img id="YouTubeButton" class="SocialsButton" src="Assets/Site/youtube.png">
-					<img id="SteamButton" class="SocialsButton" src="Assets/Site/steam.png">
-				</div>
-			</div>
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
 
-			<div id="BannerFrame">
-				<div id="BannerMainFrame">
-					<img id="BannerImage" src="Assets/Site/banner.png">
-					<span id="QuoteText">this is a quote</span>
-					<span id="QuoteAuthor">Kazuhira Miller (METAL GEAR SOLID V)</span>
-					<img id="QuoteLine" src="Assets/Site/quoteline.png">
+</head>
 
-					<span id="MinokahText">minokah</span>
-					<span id="MinokahSubText">I do stuff</span>
-				</div>
-				
-				<a href="Old/index.html"><span class="ArrowLink">> Return to Old Site</span></a>
-				<span id="ChangeQuoteLabel" class="ArrowLink">> Change quote</span>
+<body>
 
-				<span id="CreditText" class="BannerText">minokah 2020</span>
-				<span id="ArtworkText" class="BannerText">
-					Banner: @Fleurfurr
-					<br> Pattern: Marketplace.tf
-				</span>
-			</div>
-			
-			<div id="DiscordSmallFrame">
-				<img id="DiscordSmallIcon" src="Assets/Presence/icon.png">
-				<span id="DiscordSmallTitle">Rich Presence</span>
-				<img id="DiscordSmallArrow" src="Assets/Site/arrowdown.png">
-				<span id="DiscordSmallState"></span>
-				<span id="DiscordSmallCLink" class="DiscordSmallLink">> Back</span>
-				<span id="DiscordSmallILink" class="DiscordSmallLink">What is this?</span>
-				<span id="DiscordSmallIText">This is basically like Discord's rich presence. I made a program that auto detects and refreshes Github Pages with what I'm playing.</span>
-			</div>
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
 
-			<div id="NavigationFrame">
-				<div id="ProjectsButton" class="NavButton"><span id="ProjectsLink" class="ButtonLink">Projects</span></div>
-				<div id="VideosButton" class="NavButton"><span id="VideosLink" class="ButtonLink">Videos</span></div>
-				<div id="GalleryButton" class="NavButton"><span id="GalleryLink" class="ButtonLink">Gallery</span></div>
-			</div>
+    <div id="top" class="s-wrap site-wrapper">
 
-			<div id="ListFrame">
-				<span id="ListEmptyText">There is nothing here</span>
-				<div id="ProjectsContainer" class="ListContainer"></div>
-				<div id="VideosContainer" class="ListContainer"></div>
-				<div id="GalleryContainer" class="ListContainer"></div>
-			</div>
-			
-			<div id="VectorBackground"></div>
-		</div>
-	</body>
+        <!-- site header
+        ================================================== -->
+        <header class="s-header">
+            <div class="header__top">
+                <div class="header__logo">
+                    <a class="site-logo" href="index.html">
+                        <img src="images/logo.svg" alt="Homepage">
+                    </a>
+                </div>
 
-	<script type="text/javascript" src="javascript.js"></script>
-</html>
+                <div class="header__search">
+    
+                    <form role="search" method="get" class="header__search-form" action="#">
+                        <label>
+                            <span class="hide-content">Search for:</span>
+                            <input type="search" class="header__search-field" placeholder="Type Keywords" value="" name="s" title="Search for:" autocomplete="off">
+                        </label>
+                        <input type="submit" class="header__search-submit" value="Search">
+                    </form>
+        
+                    <a href="#0" title="Close Search" class="header__search-close">Close</a>
+        
+                </div>  <!-- end header__search -->
+
+                <!-- toggles -->
+                <a href="#0" class="header__search-trigger"></a>
+                <a href="#0" class="header__menu-toggle"><span>Menu</span></a>
+
+            </div> <!-- end header__top -->
+
+            <nav class="header__nav-wrap">
+
+                <ul class="header__nav">
+                    <li class="current"><a href="index.html" title="">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                    <li class="has-children">
+                        <a href="#0" title="">Other</a>
+                        <ul class="sub-menu">
+                        <li><a href="gamestats.html">Game Stats</a></li>
+                        </ul>
+                    </li>
+                </ul> <!-- end header__nav -->
+
+                <ul class="header__social">
+                    <li class="ss-youtube">
+                        <a href="https://www.youtube.com/channel/UCyQkTJLpfR0PEMvDQQH14cw">
+                            <span class="screen-reader-text">YouTube</span>
+                        </a>
+                    </li>
+                    <li class="ss-twitter">
+                        <a href="https://twitter.com/minokah_">
+                            <span class="screen-reader-text">Twitter</span>
+                        </a>
+                    </li>
+                    <li class="ss-steam">
+                        <a href="https://steamcommunity.com/id/minokah">
+                            <span class="screen-reader-text">Steam</span>
+                        </a>
+                    </li>
+                    <li class="ss-github">
+                        <a href="https://github.com/minokah">
+                            <span class="screen-reader-text">GitHub</span>
+                        </a>
+                    </li>
+                </ul>
+
+            </nav> <!-- end header__nav-wrap -->
+
+        </header> <!-- end s-header -->
+
+        <div class="s-content">
+
+            <header class="listing-header">
+                <img width="150" height="150" style="position: relative; top: -5px;" class="pull-left" alt="hi" src="images/icon.png">
+                <h1 class="h1 welcome_label">Hello internet traveller!</h1>
+                <code id="code_quote">They played us like a damn fiddle!</code>
+                <p class="lead">
+                    I'm Minokah, and I do stuff on the internet. I like clicking on heads and coding stuff too. I currently study first year Computer Science. Check out some of the stuff that I've made below or on the side!
+                </p>
+                <hr>
+                <br>
+                <h1 class="h1">Latest Stuff <code style="position: relative; top: -5px;">(which is currently filler)</code></h1>
+            </header>
+
+            <div class="masonry-wrap">
+                
+                <div class="masonry">
+    
+                    <div class="grid-sizer"></div>
+    
+                    <article class="masonry__brick entry format-standard animate-this">
+                            
+                        <div class="entry__thumb">
+                            <a href="https://i.redd.it/egwjwp4omap41.png" data-lity class="entry__thumb-link">
+                                <img src="images/thumbs/home/hellothere_thumb.jpg">
+                            </a>
+                        </div>
+        
+                        <div class="entry__text">
+                            <div class="entry__header">
+    
+                                <h2 class="entry__title">👋 Hello There</h2>
+                                <div class="entry__meta">
+                                    <span class="entry__meta-date">
+                                        Jan 07, 2021
+                                    </span>
+                                </div>
+                                
+                            </div>
+                            <div class="entry__excerpt">
+                                <p>
+                                There is nothing on this page for now, but more will come eventually, trust me!
+                                </p>
+                            </div>
+                        </div>
+        
+                    </article> <!-- end article -->
+    
+                </div> <!-- end masonry -->
+
+            </div> <!-- end masonry-wrap -->
+
+        </div> <!-- end s-content -->
+
+
+        <!-- footer
+        ================================================== -->
+        <footer class="s-footer">
+            <div class="row">
+                <div class="column large-full footer__content">
+                    <div class="footer__copyright">
+                        <span>Minokah</span> 
+                        <span>StyleShout</span> 
+                        <span><a href="https://minokah.github.io">Return to Old Site</a></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="go-top">
+                <a class="smoothscroll" title="Back to Top" href="#top"></a>
+            </div>
+        </footer>
+
+    </div> <!-- end s-wrap -->
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
