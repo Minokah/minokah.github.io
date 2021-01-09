@@ -288,7 +288,7 @@
         
         // custom js for quote
         var code_quote = document.getElementById("code_quote");
-        if (code_quote != null) { // prevent error :)
+        if (code_quote != null) { // prevent error
             var quote_list = [
                 {quote: "See? Red! Oh, wait... that's blood.", file: "audio/red.ogg"},
                 {quote: "Mmph mphna mprh", file: "audio/mmph.ogg"},
@@ -298,13 +298,17 @@
                 {quote: "A headcrab's on your face! Get it off your face, Alyx!", file: "audio/headcrab.ogg"},
                 {quote: "No, no! Careful, Lamarr! Those are quite fragile!", file: "audio/fragile.ogg"},
             ]
+            
+            const quote_sound = new Audio(); // ios pls
+            quote_sound.play();
 
             var picked = Math.floor(Math.random() * quote_list.length);
             code_quote.innerHTML = quote_list[picked].quote;
 
             code_quote.onmouseover = function() { code_quote.style.cursor = "pointer"; }
             code_quote.onclick = function() {
-                new Audio(quote_list[picked].file).play();
+                quote_sound.src = quote_list[picked].file;
+                quote_sound.play();
             }
         }
     })();

@@ -2764,7 +2764,7 @@ body.search-is-visible {
     width: 100%;
     background: transparent;
     padding: 0;
-    position: static;
+    position: fixed;
     top: 0;
     bottom: auto;
   }
@@ -3320,6 +3320,11 @@ body.search-is-visible {
   top: -10px;
 }
 
+#codesub {
+  position: relative;
+  top: -5px;
+}
+
 /* ------------------------------------------------------------------- 
  * responsive:
  * blog styles and blog components
@@ -3370,7 +3375,7 @@ body.search-is-visible {
 
   .welcome_label {
     position: relative;
-    top: 30px;
+    top: 20px;
   }
 
 }
@@ -3385,7 +3390,6 @@ body.search-is-visible {
     width: auto;
     padding-left: 0;
   }
-
 }
 
 /* -------------------------------------------------------------------
