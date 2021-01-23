@@ -299,7 +299,7 @@
                 {quote: "No, no! Careful, Lamarr! Those are quite fragile!", file: "audio/fragile.ogg"},
             ]
             
-            const quote_sound = new Audio(); // ios pls
+            const quote_sound = new Audio(); // ios pls edit: does not fix anything
             quote_sound.play();
 
             var picked = Math.floor(Math.random() * quote_list.length);
@@ -311,6 +311,8 @@
                 quote_sound.play();
             }
         }
+
+        window.onbeforeunload = function () { window.scrollTo(0, 0); } // to the top we go (automatically)
     })();
 
 })(jQuery);
