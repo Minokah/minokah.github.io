@@ -82,10 +82,7 @@ p {
 .box {
     clear: both;
     height: 24px;
-}
-
-.box2 {
-    clear: both;
+    transition-duration: 0.15s;
 }
 
 .box:hover {
