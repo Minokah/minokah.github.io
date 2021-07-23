@@ -8,9 +8,10 @@ if (code_quote != null) {
         { quote: "They played us like a damn fiddle!", file: "audio/fiddle.ogg" },
         { quote: "A headcrab's on your face! Get it off your face, Alyx!", file: "audio/headcrab.ogg" },
         { quote: "No, no! Careful, Lamarr! Those are quite fragile!", file: "audio/fragile.ogg" },
+        { quote: "I am... not interested little sun. Try again when you've become a man.", file: "audio/sun.ogg"}
     ]
 
-    const quote_sound = new Audio(); // edit: does not fix anything
+    const quote_sound = new Audio();
     quote_sound.play();
 
     var picked = Math.floor(Math.random() * quote_list.length);
