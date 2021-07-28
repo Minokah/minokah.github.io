@@ -38,9 +38,8 @@ section {
 }
 
 .label {
-    font-family: "Open Sans", sans-serif;
-    margin-top: 25px;
-    margin-bottom: 10px;
+    font-family: "Mukta", sans-serif;
+    margin-top: 10px;
     font-size: 25px;
     font-weight: bold;
     color: white;
@@ -63,9 +62,15 @@ section {
 }
 
 p {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Mukta", sans-serif;
     color: white;
     font-size: 18px;
+}
+
+.boximg {
+    vertical-align: top;
+    max-height: 25px;
+    max-width: 25px;
 }
 
 .left {
@@ -73,6 +78,7 @@ p {
     margin: 0;
     padding-left: 10px;
 }
+
 .right {
 	float: right;
     margin: 0;
@@ -81,7 +87,7 @@ p {
 
 .box {
     clear: both;
-    height: 24px;
+    height: 28px;
     transition-duration: 0.15s;
 }
 
