@@ -1,0 +1,112 @@
+@font-face {
+    font-family: "Strawberry";
+    src: url("Strawberry.otf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    
+}
+
+.section {
+    width: calc(100% - 200px);
+    padding: 50px 100px 50px 100px;
+}
+
+a {
+    text-decoration: none;
+}
+
+#intro {
+    background: url("images/background.png");
+    background-position: 0 5%;
+    text-align: center;
+}
+
+#icon {
+    position: absolute;
+    left: 100px;
+    top: 15px;
+    width: 130px;
+    height: 130px;
+    border-radius: 100px;
+}
+
+h1 {
+    font-family: "Strawberry";
+    font-size: 120px;
+    letter-spacing: 4px;
+}
+
+h2 {
+    font-family: "Open Sans";
+    font-size: 50px;
+}
+
+h3 {
+    font-family: "Open Sans";
+    font-size: 30px;
+    color: white;
+}
+
+.subtext {
+    font-family: "Open Sans";
+    font-size: 20px;
+}
+
+#socialarea {
+    margin-top: 20px;
+}
+
+.social {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin-right: 15px;
+    opacity: 75%;
+    transition: opacity 0.2s;
+}
+
+.social:hover {
+    opacity: 100%;
+}
+
+#projectarea {
+    margin-top: 25px;
+}
+
+.project {
+    width: 500px;
+    height: 340px;
+    background-color: rgb(31, 31, 31);
+    transition: background-color 0.2s;
+    display: inline-block;
+    margin: 0 65px 50px 0;
+}
+
+.project:hover {
+    background-color: rgb(80, 80, 80);
+}
+
+.project-image {
+    width: 100%;
+    height: 100px;
+    background-color: blue;
+}
+
+.project-textfield {
+    width: calc(100% - 60px);
+    height: calc(100% - 130px);
+    padding: 15px 30px 15px 30px;
+    word-wrap: break-word;
+}
+
+.project-subtext {
+    font-family: "Open Sans";
+    font-size: 18px;
+    color: white;
+}

@@ -1,19 +1,12 @@
 <html>
 
 <head>
-    <!-- fonts -->
-    <link rel="stylesheet" href="main.css">
+    <title>Minokah</title>
+    <link rel="stylesheet" href="styles.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
-
-    <meta charset="utf-8">
-    <title>Minokah</title>
-    <meta name="description" content="i'm minokah, nice to meet you">
-    <meta property="og:description" content="i'm minokah, nice to meet you">
-    <meta name="author" content="minokah">
-    <meta property="og:title" content="minokah's site">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- favicons
     ================================================== -->
@@ -26,79 +19,86 @@
 </head>
 
 <body>
-    <header>
-        <img id="icon" src="images/icon.png">
-        <h1 id="header">Minokah</h1>
-        <p>he/him, cs student</p>
-    </header>
-
-    <section>
-        <h2 class="label" id="socials">socials</h2>
-        <a href="https://twitter.com/minokah_" target="_blank">
-            <div class="box">
-                <p class="left"><img class="boximg" src="images/twitter.png"> Twitter</p>
-                <p class="right">@minokah_</p>
-            </div>
-        </a>
-        <a href="https://www.youtube.com/channel/UCyQkTJLpfR0PEMvDQQH14cw" target="_blank">
-            <div class="box">
-                <p class="left"><img class="boximg" src="images/youtube.png"> YouTube</p>
-                <p class="right">minokah</p>
-            </div>
-        </a>
-        <a href="https://steamcommunity.com/id/minokah/" target="_blank">
-            <div class="box">
-                <p class="left"><img class="boximg" src="images/steam.png"> Steam</p>
-                <p class="right">·</p>
-            </div>
-        </a>
-        <a href="https://github.com/minokah" target="_blank">
-            <div class="box">
-                <p class="left"><img class="boximg" src="images/github.png"> GitHub</p>
-                <p class="right">·</p>
-            </div>
-        </a>
-    </section>
-
-    <section>
-        <h2 class="label" id="contacts">profiles</h2>
-        <a href="https://i.redd.it/egwjwp4omap41.png" target="_blank">
-            <div class="box">
-                <p class="left"><img class="boximg" src="images/discord.png"/> Discord</p>
-                <p class="right">minokah#4032</p>
-            </div>
-        </a>
-        <a href="https://na.finalfantasyxiv.com/lodestone/character/35425221/" target="_blank">
-            <div class="box">
-                <p class="left"><img class="boximg" src="images/xiv.png"/> FFXIV</p>
-                <p class="right">Windows Xp</p>
-            </div>
-        </a>
-    </section>
-
-    <section>
-        <h2 class="label" id="projects">projects</h2>
-        <a href="https://github.com/minokah/Robonokah" target="_blank">
-            <div class="box">
-                <p class="left"><img class="boximg" src="images/robonokah.png"> Robonokah</p>
-            </div>
-        </a>
-    </section>
-
-    <section>
-        <h2 class="label" id="other">other</h2>
-        <a href="images/ref.png" target="_blank">
-            <div class="box">
-                <p class="left"><img class="boximg" src="images/brush.png"> Reference Sheet</p>
-            </div>
-        </a>
-    </section>
-
-    <br><br><br>
-    <code id="code_quote">They played us like a damn fiddle!</code>
-    <br><br><br>
-
-    <script src="js.js"></script>
+    <div class="section" id="intro">
+        <h1>Minokah</h1>
+        <span class="subtext">he/him, computer science @ western</span>
+        <div id="socialarea">
+            <a href="https://github.com/minokah" target="_blank"><a href="google.com"><img class="social" src="images/github.png"></a>
+                <a href="https://steamcommunity.com/id/minokah/" target="_blank"><img class="social" src="images/steam.png"></a>
+                <a href="https://twitter.com/minokah_" target="_blank"><img class="social" src="images/twitter.png"></a>
+                <a href="https://www.youtube.com/channel/UCyQkTJLpfR0PEMvDQQH14cw" target="_blank"><img class="social" src="images/youtube.png"></a>
+                <a href="https://na.finalfantasyxiv.com/lodestone/character/35425221/" target="_blank"><img class="social" src="images/xiv.png"></a>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Projects</h2>
+        <span class="subtext">Code I've written for myself or school</span>
+        <div id="projectarea">
+            <a href="https://github.com/minokah/Robonokah" target="_blank">
+                <div class="project">
+                    <div class="project-image" style="background: url('images/robonokah.png')" )></div>
+                    <div class="project-textfield">
+                        <h3>Robonokah</h3>
+                        <span class="project-subtext">Discord bot.<br><br>Publish notes, play various minigames, and search for
+                            items or players from the critically acclaimed MMORPG, FINAL FANTASY XIV!</span>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/minokah/XIVSearch" target="_blank">
+                <div class="project">
+                    <div class="project-image" style="background: url('images/xivsearch.png')" )></div>
+                    <div class="project-textfield">
+                        <h3>XIVSearch</h3>
+                        <span class="project-subtext">Desktop WPF implementation of the FINAL FANTASY XIV search.<br><br><br><br></span>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/minokah/Secondary-School-Projects/tree/main/DESOCRETE" target="_blank">
+                <div class="project">
+                    <div class="project-image" style="background: url('images/desocrete.png')" )></div>
+                    <div class="project-textfield">
+                        <h3>DESOCRETE</h3>
+                        <span class="project-subtext">Top-down/side-scrolling 2D shooter. Grade 12 final project.<br><br>A mix between Escape from Tarkov and Fallout Shelter!</span>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/minokah/Secondary-School-Projects/tree/main/UntitledRPGGame" target="_blank">
+                <div class="project">
+                    <div class="project-image" style="background: url('images/rpggame.png')" )></div>
+                    <div class="project-textfield">
+                        <h3>Untitled RPG Game</h3>
+                        <span class="project-subtext">Top-down/side-scrolling 2D role-playing game. Grade 11 final project.<br><br>Wander into the forest to other town, but beware the foes on your way there!</span>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/minokah/Secondary-School-Projects/tree/main/TuringMiami" target="_blank">
+                <div class="project">
+                    <div class="project-image" style="background: url('images/turingmiami.png')" )></div>
+                    <div class="project-textfield">
+                        <h3>Turing Miami</h3>
+                        <span class="project-subtext">Hotline Miami knockoff made in Turing. Grade 10 final project.<br><br><br><br></span>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/minokah/minokah.github.io" target="_blank">
+                <div class="project">
+                    <div class="project-image" style="background: url('images/cs.png')" )></div>
+                    <div class="project-textfield">
+                        <h3>University Projects</h3>
+                        <span class="project-subtext">Assignments and Projects I have completed from classes.<br><br>Currently includes ARM assembly, Data Structures and Algorithms.<br></span>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/minokah/minokah.github.io" target="_blank">
+                <div class="project">
+                    <div class="project-image" style="background: url('images/background.png')" )></div>
+                    <div class="project-textfield">
+                        <h3>Personal Website</h3>
+                        <span class="project-subtext">Yes, the one you're looking at right now.<br><br><br><br><br></span>
+                    </div>
+                </div>
+            </a>
+        </div>
 </body>
 
 </html>
