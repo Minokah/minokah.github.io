@@ -1,15 +1,6 @@
-@font-face {
-    font-family: "Strawberry";
-    src: url("Strawberry.otf");
-}
-
 * {
     margin: 0;
     padding: 0;
-}
-
-body {
-    
 }
 
 .section {
@@ -22,39 +13,60 @@ a {
 }
 
 #intro {
-    background: url("images/background.png");
-    background-position: 0 5%;
+    background-color: black;
     text-align: center;
+    background-image: url("images/pattern.png");
 }
 
 #icon {
-    position: absolute;
-    left: 100px;
-    top: 15px;
-    width: 130px;
-    height: 130px;
+    width: 150px;
+    height: 150px;
+    border: 5px rgb(15, 15, 15) solid;
     border-radius: 100px;
+    margin-right: 40px;
+}
+
+#iconsource {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    opacity: 0.15;
+    transition: opacity 0.2s;
+}
+
+#iconsource:hover {
+    opacity: 0.3;
+}
+
+.left {
+    text-align: left;
+}
+
+.inline {
+    display: inline-block;
+}
+
+h1, h2, h3, span, .subtext {
+    font-family: "Lato";
+}
+
+.white {
+    color: white;
 }
 
 h1 {
-    font-family: "Strawberry";
-    font-size: 120px;
-    letter-spacing: 4px;
+    font-size: 50px;
 }
 
 h2 {
-    font-family: "Open Sans";
     font-size: 50px;
 }
 
 h3 {
-    font-family: "Open Sans";
     font-size: 30px;
-    color: white;
 }
 
 .subtext {
-    font-family: "Open Sans";
     font-size: 20px;
 }
 
@@ -107,8 +119,7 @@ h3 {
 
 .project-subtext {
     font-family: "Open Sans";
-    font-size: 18px;
-    color: white;
+    font-size: 16px;
 }
 
 @media only screen and (max-width: 635px) {
@@ -130,7 +141,6 @@ h3 {
         font-size: 6vw;
     }
     .subtext {
-        font-family: "Open Sans";
         font-size: 3vw;
     }
     .project {
