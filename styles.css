@@ -38,7 +38,7 @@ a {
     opacity: 0.3;
 }
 
-.left {
+.headertext {
     text-align: left;
 }
 
@@ -122,17 +122,28 @@ h3 {
     font-size: 16px;
 }
 
-@media only screen and (max-width: 635px) {
+@media only screen and (max-width: 762px) {
     .section {
         width: calc(100% - 100px);
         padding: 50px;
     }
     .social {
-        width: 30px;
-        height: 30px;
+        width: 35px;
+        height: 35px;
+    }
+    .headertext {
+        text-align: center;
+    }
+    .inline {
+        display: block;
+    }
+    #icon {
+        margin-right: 0;
+        width: 100px;
+        height: 100px;
     }
     h1 {
-        font-size: 15vw;
+        font-size: 9vw;
     }
     h2 {
         font-size: 6vw;
