@@ -1,163 +1,67 @@
 * {
-    margin: 0;
-    padding: 0;
-}
-
-.section {
-    width: calc(100% - 200px);
-    padding: 50px 100px 50px 100px;
+    font-family: "Noto Sans" !important;
 }
 
 a {
+    color: white !important;
     text-decoration: none;
 }
 
-#intro {
-    background-color: black;
-    text-align: center;
-    background-image: url("images/pattern.png");
+#credit-text {
+    color: rgb(60, 60, 60);
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    transition: color 0.2s;
 }
 
-#icon {
-    width: 150px;
+#credit-text:hover {
+    color: rgb(100, 100, 100);
+}
+
+#banner-icon {
     height: 150px;
     border: 5px rgb(15, 15, 15) solid;
-    border-radius: 100px;
-    margin-right: 40px;
+    border-radius: 75px;
 }
 
-#iconsource {
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    opacity: 0.15;
-    transition: opacity 0.2s;
-}
-
-#iconsource:hover {
-    opacity: 0.3;
-}
-
-.headertext {
-    text-align: left;
-}
-
-.inline {
-    display: inline-block;
-}
-
-h1, h2, h3, span, .subtext {
-    font-family: "Lato";
-}
-
-.white {
-    color: white;
-}
-
-h1 {
-    font-size: 50px;
-}
-
-h2 {
-    font-size: 50px;
-}
-
-h3 {
-    font-size: 30px;
-}
-
-.subtext {
-    font-size: 20px;
-}
-
-#socialarea {
-    margin-top: 20px;
+#header {
+    background-color: black;
+    background-image: url("images/pattern.png");
 }
 
 .social {
     width: 50px;
-    height: 50px;
-    display: inline-block;
-    margin-right: 15px;
-    opacity: 75%;
+    opacity: 0.8;
     transition: opacity 0.2s;
 }
 
 .social:hover {
-    opacity: 100%;
+    opacity: 1;
 }
 
-#projectarea {
-    margin: 25px 0 25px 0;
+.content {
+    border-radius: 8px;
+    width: 100%;
+    height: 265px;
+    background-color: rgb(20, 20, 20);
+    transition: opacity 0.2s;
 }
 
-.project {
-    width: 450px;
-    height: 300px;
-    background-color: rgb(31, 31, 31);
-    transition: background-color 0.2s;
-    display: inline-block;
-    margin: 0 65px 50px 0;
+.content:hover {
+    opacity: 0.8;
 }
 
-.project:hover {
-    background-color: rgb(80, 80, 80);
-}
-
-.project-image {
+.content-image {
     width: 100%;
     height: 100px;
-    background-color: blue;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-size: cover;
 }
 
-.project-textfield {
-    width: calc(100% - 60px);
-    height: calc(100% - 130px);
-    padding: 15px 30px 15px 30px;
-    word-wrap: break-word;
-}
-
-.project-subtext {
-    font-family: "Open Sans";
-    font-size: 16px;
-}
-
-@media only screen and (max-width: 762px) {
-    .section {
-        width: calc(100% - 100px);
-        padding: 50px;
-    }
-    .social {
-        width: 35px;
-        height: 35px;
-    }
-    .headertext {
+@media (max-width: 562px) {
+    #header-text-center {
         text-align: center;
     }
-    .inline {
-        display: block;
-    }
-    #icon {
-        margin-right: 0;
-        width: 100px;
-        height: 100px;
-    }
-    h1 {
-        font-size: 9vw;
-    }
-    h2 {
-        font-size: 6vw;
-    }
-    h3 {
-        font-size: 6vw;
-    }
-    .subtext {
-        font-size: 3vw;
-    }
-    .project {
-      width: 100%;
-    }
-    .project-subtext {
-        font-size: 2.5vw;
-    }
-  }
+}
