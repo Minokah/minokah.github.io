@@ -1,0 +1,137 @@
+<html>
+
+<head>
+  <title>Western CS Discord - Course Info</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href="styles.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"><b>🐱 Home</b></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              📚 Courses
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="courses.html?year=first">First Year (1000-1999)</a></li>
+              <li><a class="dropdown-item" href="courses.html?year=second">Second Year (2000-2999)</a></li>
+              <li><a class="dropdown-item" href="courses.html?year=third">Third Year (3000-3999)</a></li>
+              <li><a class="dropdown-item" href="courses.html?year=fourth">Fourth Year (4000-4999)</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="d-flex">
+        <span id="last_update" class="text-white-50"></span>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="card text-bg-dark mb-3">
+        <div class="row g-0">
+          <div class="col-1 pt-4 ps-2">
+            <img
+              src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/microsoft/319/waving-hand_1f44b.png"
+              class="img-fluid rounded-start" width="90" height="90">
+          </div>
+          <div class="col">
+            <div class="card-body">
+              <h1 class="card-title">Hello!</h1>
+              <p class="card-text">This website is dedicated to provide general thoughts and feelings about computer
+                science courses at Western University. Use the dropdown list above on the navigation bar or the list
+                below to filter courses by year.</p>
+              <span><b>❗This is NOT the academic calendar.</b> Please check Western's academic calendar to view
+                additional details like pre/anti-requisites.❗</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-2">
+      <div class="col-md-4 mb-3">
+        <div class="card h-100">
+          <h6 class="card-header">Courses</h6>
+
+          <div class="list-group list-group-flush">
+            <a href="courses.html?year=first" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">First Year</div>
+                1000-1999
+              </div>
+              <span id="num_first" class="badge bg-primary rounded-pill">... Courses</span>
+            </a>
+            <a href="courses.html?year=second" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Second Year</div>
+                2000-2999
+              </div>
+              <span id="num_second" class="badge bg-primary rounded-pill">... Courses</span>
+            </a>
+            <a href="courses.html?year=third" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Third Year</div>
+                3000-3999
+              </div>
+              <span id="num_third" class="badge bg-primary rounded-pill">... Courses</span>
+            </a>
+            <a href="courses.html?year=fourth" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Fourth Year</div>
+                4000-4999
+              </div>
+              <span id="num_fourth" class="badge bg-primary rounded-pill">... Courses</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card h-100">
+          <div class="row g-0">
+            <h6 class="card-header">Looking for bird courses?</h6>
+            <img src="images/bird.png" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Bird Courses</h5>
+              <p class="card-text">Courses that you can put less-than-usual effort into getting a good mark in.</p>
+              <a href="#" class="btn btn-primary disabled">View Courses</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card h-100">
+          <div class="row g-0">
+            <h6 class="card-header">Random Course</h6>
+            <img src="images/code.png" class="card-image-top">
+            <div class="card-body">
+              <h5 class="card-title">Random Course</h5>
+              <p class="card-text">I am a random course description</p>
+              <br>
+              <a href="#" class="btn btn-primary disabled">View Info</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="updated.js"></script>
+  <script src="courses.js"></script>
+  <script src="index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
