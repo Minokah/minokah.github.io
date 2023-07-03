@@ -7,18 +7,6 @@ a {
     text-decoration: none;
 }
 
-#credit-text {
-    color: rgb(80, 80, 80);
-    position: absolute;
-    top: 10px;
-    left: 15px;
-    transition: color 0.2s;
-}
-
-#credit-text:hover {
-    color: rgb(120, 120, 120);
-}
-
 #banner-icon {
     height: 150px;
     border: 5px rgb(40, 40, 40) solid;
