@@ -1,0 +1,72 @@
+[
+    {
+        "name": "Duel Blades",
+        "desc": "Clash sword against sword with the enemy and come out on top!",
+        "url": "https://github.com/minokah/DuelBlades",
+        "image": "duelblades.png",
+        "tags": ["cs", "unity"]
+    },
+    {
+        "name": "Dungeon Escape",
+        "desc": "Find the three keys to escape the dungeon. Some parkour involved, probably.",
+        "url": "https://github.com/minokah/DungeonEscape",
+        "image": "dungeonescape.png",
+        "tags": ["cs", "unity"]
+    },
+    {
+        "name": "Binyl",
+        "desc": "Vinyls digitized for Raspberry Pi. Tap Binyl cards to add songs, change playback, and more!",
+        "url": "https://github.com/minokah/Binyl",
+        "image": "binyl.png",
+        "tags": ["cpp", "raspi", "sfml"]
+    },
+    {
+        "name": "Western Campus Map Viewer",
+        "desc": "An interior map viewer for buildings at Western University.",
+        "url": "https://github.com/minokah/WesternCampusMapViewer",
+        "image": "wcmv.png",
+        "tags": ["java"]
+    },
+    {
+        "name": "uwoInfo",
+        "desc": "(Re)view courses and modules from Western University.",
+        "url": "https://github.com/minokah/uwoInfo",
+        "image": "uwoinfo.png",
+        "tags": ["js", "nodejs"]
+    },
+    {
+        "name": "Robonokah",
+        "desc": "Discord.js bot. Search for anything FFXIV-related, play minigames like Tic-Tac-Toe, and more!",
+        "url": "https://github.com/minokah/Robonokah",
+        "image": "robonokah.png",
+        "tags": ["js", "nodejs"]
+    },
+    {
+        "name": "DESOCRETE",
+        "desc": "2D shooter. A mix between Escape from Tarkov and Fallout Shelter.",
+        "url": "https://github.com/minokah/DESOCRETE",
+        "image": "desocrete.png",
+        "tags": ["cpp", "sfml"]
+    },
+    {
+        "name": "Brickbreaker",
+        "desc": "Brickbreaker game using Box2D physics and a 'breakerstreak' powerup mechanic.",
+        "url": "https://github.com/minokah/Brickbreaker",
+        "image": "brickbreaker.png",
+        "tags": ["cpp", "sfml"]
+    },
+    {
+        "name": "Untitled RPG Game",
+        "desc": "Simple 2D role-playing game with turn based combat.",
+        "url": "https://github.com/minokah/UntitledRPGGame",
+        "image": "rpggame.png",
+        "tags": ["cpp", "sfml"]
+    },
+    {
+        "name": "Turing Miami",
+        "desc": "Simple knock-off of Hotline Miami made in Turing.",
+        "url": "https://github.com/minokah/TuringMiami",
+        "image": "turingmiami.png", 
+        "tags": ["turing"]
+    }
+]
