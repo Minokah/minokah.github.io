@@ -7,7 +7,6 @@ twticon.onmouseleave = () => {
     twticon.src = "images/x.png"
 }
 
-
 // fill the div with projects from data.json
 async function fillProjectDiv() {
     var projectDiv = document.getElementById("projects-div")
@@ -24,7 +23,7 @@ async function fillProjectDiv() {
         }
 
         var diventry = `
-            <div class="col-lg-4 mb-3">
+            <div class="col-lg-4 col-6 mb-3">
                 <a href="${entry.url}" target="_blank">
                     <div class="card card-link text-bg-dark h-100">
                         <img src="images/projects/${entry.image}" class="card-img-top">

@@ -44,4 +44,9 @@ a {
     #header-text-center {
         text-align: center;
     }
+
+    #external-badges {
+        position: relative;
+        left: 35px;
+    }
 }
