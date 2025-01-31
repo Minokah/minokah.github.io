@@ -41,9 +41,9 @@
             </div>
         </div>
     </div>
-    <div class="container mb-3">
+    <div class="container mb-4">
         <div class="row text-center ms-1 me-1">
-            <div class="card text-bg-dark mt-5 mb-3">
+            <div class="card text-bg-dark mt-5">
                 <div class="card-body">
                     <h1 class="card-title"><b>👋 Welcome!</b></h1>
                     <p class="card-text">I'm Brandon, a 22 year old computer science student at Western University. Nice
@@ -53,51 +53,24 @@
         </div>
     </div>
     <div class="container">
-        <div class="row mb-3">
-            <a href="#projects-collapse" data-bs-toggle="collapse">
-                <div class="card card-link text-bg-dark mb-3">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <h1><b>🖥️ Projects</b></h1>
-                            </div>
-                            <div class="col text-end">
-                                <p class="card-text">Code I've written for myself or school</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
+        <div class="row justify-content-center mb-4">
+            <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
+                <button id="nav-projects" type="button" class="btn no-overflow btn-outline-dark active col-4">
+                    <span>Projects</span>
+                    <img class="nav-bg-img nav-bg-img-active" src="images/icons/blueprint.png">
+                </button>
+                <button id="nav-experience" type="button" class="btn no-overflow btn-outline-dark col-4">
+                    <span>Experience</span>
+                    <img class="nav-bg-img" src="images/icons/job.png">
+                </button>
+                <button id="nav-artwork" type="button" class="btn no-overflow btn-outline-dark col-4">
+                    <span>Artwork</span>
+                    <img class="nav-bg-img" src="images/icons/art.png">
+                </button>
+              </div>              
         </div>
-
-        <div class="collapse show" id="projects-collapse">
-            <div id="projects-div" class="row row-cols-3 mb-2"></div>
-            <hr>
-            <div class="row my-4">
-                <div class="col-lg-4 col-6 mb-3">
-                    <a href="https://github.com/minokah/Coursework" target="_blank">
-                        <div class="card card-link text-bg-dark h-100">
-                            <img src="images/code.png">
-                            <div class="card-body">
-                                <h4 class="card-title"><b>Coursework</b></h4>
-                                <p class="card-text">Coursework from university.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-6 mb-3">
-                    <a href="https://github.com/minokah/minokah.github.io" target="_blank">
-                        <div class="card card-link text-bg-dark h-100">
-                            <img src="images/background.png">
-                            <div class="card-body">
-                                <h4 class="card-title"><b>Personal Website</b></h4>
-                                <p class="card-text">Yes, the one you're looking at right now.<br></p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
+        
+        <div id="results-div" class="row mb-2"></div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

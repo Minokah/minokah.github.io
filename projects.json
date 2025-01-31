@@ -68,5 +68,17 @@
         "url": "https://github.com/minokah/TuringMiami",
         "image": "turingmiami.png", 
         "tags": ["turing"]
+    },
+    {
+        "name": "Coursework",
+        "desc": "Coursework from university.",
+        "url": "https://github.com/minokah/Coursework",
+        "image": "code.png"
+    },
+    {
+        "name": "Personal Website",
+        "desc": "Yes, the one you're looking at right now.",
+        "url": "https://github.com/minokah/minokah.github.io",
+        "image": "misc.png"
     }
 ]

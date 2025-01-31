@@ -40,7 +40,26 @@ a {
     height: 25px;
 }
 
-@media (max-width: 562px) {
+.no-overflow {
+    overflow: hidden;
+}
+
+.nav-bg-img {
+    position: absolute;
+    left: 20px;
+    top: -30px;
+    width: 100px;
+    height: 100px;
+    opacity: 0.35;
+    transform: rotate(-10deg);
+    transition-duration: 0.25s;
+}
+
+.nav-bg-img-active {
+    opacity: 1 !important;
+}
+
+@media (max-width: 576px) {
     #header-text-center {
         text-align: center;
     }
@@ -49,4 +68,15 @@ a {
         position: relative;
         left: 35px;
     }
+}
+
+@media (max-width: 1200px) {
+    .nav-bg-img, .nav-bg-img-active {
+        opacity: 0 !important;
+    }
+}
+
+#results-div {
+    opacity: 1;
+    transition-duration: 0.5s;
 }
