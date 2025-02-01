@@ -125,8 +125,11 @@ async function fillExperienceDiv() {
                             <div class="card-body">
                                 <div class="card-title">
                                     <h4><b>${entry.company}</b></h4>
-                                    <span><b>${entry.position}</b></span>
+                                    <span>${entry.position}</span>
+                                    <br>
+                                    <span>${entry.date}</span>
                                 </div>
+                                <hr>
                                 <p class="card-text">
                                     <span>${entry.bodyheading}</span>
                                     <ul>${acclist}</ul>
@@ -150,7 +153,7 @@ async function fillExperienceDiv() {
 
 // specific HTML for artwork
 async function fillArtworkDiv() {
-    resultDiv.innerHTML = "<span>This is where art of my character will go :D</span>"
+    resultDiv.innerHTML = "<span>This is where art of my character will go, eventually :D</span>"
     resultDiv.style.opacity = 1
 }
 

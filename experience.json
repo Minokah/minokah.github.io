@@ -2,6 +2,7 @@
     {
         "company": "J.D. Power",
         "position": "Software Development Intern",
+        "date": "May 2023 - September 2024",
         "image": "jdpower.png",
         "bodyheading": "As a team, I helped contribute code to several projects that read vehicle data from an MSSQL and Cassandra database and converts it into different formats for downstream usage in other projects.",
         "accomplishments": [
