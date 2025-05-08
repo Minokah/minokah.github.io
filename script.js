@@ -144,7 +144,7 @@ async function fillExperienceDiv() {
     }
 
     if (experienceData == null || experienceData.length == 0) {
-        div = "<span>No data :(</span>"
+        div = "<span>No data 😱</span>"
     }
 
     resultDiv.innerHTML = div
@@ -153,7 +153,7 @@ async function fillExperienceDiv() {
 
 // specific HTML for artwork
 async function fillArtworkDiv() {
-    resultDiv.innerHTML = "<span>This is where art of my character will go, eventually :D</span>"
+    resultDiv.innerHTML = "<span>This is where art of my character will go eventually, yes yes.</span>"
     resultDiv.style.opacity = 1
 }
 

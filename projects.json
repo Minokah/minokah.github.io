@@ -1,5 +1,19 @@
 [
     {
+        "name": "Ghost Defense",
+        "desc": "A tower defense game where you (a humble ghost) defends your house against hordes of invading humans.",
+        "url": "https://github.com/minokah/GhostDefense",
+        "image": "ghostdefense.png",
+        "tags": ["cs", "unity"]
+    },
+    {
+        "name": "AI Interviewer",
+        "desc": "Practice your interview skills with an AI powered by Ollama or ChatGPT. Includes text-to-speech, speech-to-text, and VR!",
+        "url": "https://github.com/minokah/AIInterviewer",
+        "image": "aiinterviewer.png",
+        "tags": ["cs", "unity"]
+    },
+    {
         "name": "Duel Blades",
         "desc": "Clash sword against sword with the enemy and come out on top!",
         "url": "https://github.com/minokah/DuelBlades",
