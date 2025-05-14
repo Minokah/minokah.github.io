@@ -4,14 +4,15 @@
         "position": "Software Development Intern",
         "date": "May 2023 - September 2024",
         "image": "jdpower.png",
-        "bodyheading": "As a team, I helped contribute code to several projects that read vehicle data from an MSSQL and Cassandra database and converts it into different formats for downstream usage in other projects.",
+        "bodyheading": "Collaborated with a team to develop, maintain, and debug code for multiple projects that read vehicle data stored within SQL Server and Cassandra databases, then transforming it into various formats for downstream applications.",
         "accomplishments": [
-            "Contributed clean and efficient Java code to several projects that extract vehicle (and other) data from SQL Server/Cassandra databases, then parses and transforms that data into various formats for downstream projects",
-            "Migrated various projects and deployments to newer versions, such as Tomcat (Java 8) to Spring Boot (Java 21), as well as resolving critical vulnerabilities via Maven",
-            "Reduced CI/CD pipeline build times by over 75% by using Mockito and JUnit to decouple database queries from test cases",
-            "Created test cases using JUnit for automated testing to ensure outputs are correct",
-            "Setup and deployed projects to a live environment using Docker and GitLab CI/CD, then monitored those deployments' containers and pods using Rancher",
-            "Analyzed bugs via the debugger and fixed them within the codebases of several projects"
+            "Contributed clean and efficient Java code for multiple data extraction projects utilizing SQL Server and Cassandra, transforming vehicle and related data for downstream applications",
+            "Modified and maintained SQL queries to support evolving data requirements",
+            "Migrated legacy projects and applications from Tomcat (Java 8) to Spring Boot (Java 21), as well as resolving various Maven vulnerabilities",
+            "Reduced CI/CD pipeline build times by over 75% by implementing a test suite using Mockito and JUnit to decouple database queries from test cases",
+            "Created and maintained test cases using JUnit for automated testing to ensure reliable and accurate outputs",
+            "Setup and deployed projects to production environments using Docker and GitLab CI/CD,  monitored deployment containers and pods via Rancher",
+            "Performed bug analysis and fixed them via the debugger across multiple projects"
         ]
     }
 ]
