@@ -115,25 +115,27 @@ async function fillExperienceDiv() {
         }
 
         var diventry = `
-            <div class="col mb-3">
-                <div class="card text-bg-dark h-100">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-12">
-                            <img src="images/experience/${entry.image}" class="card-img-top card-img-bottom experience-img ms-md-3 mt-md-3">
-                        </div>
-                        <div class="col-md-9 col-sm-12">
-                            <div class="card-body">
-                                <div class="card-title">
-                                    <h4><b>${entry.company}</b></h4>
-                                    <span>${entry.position}</span>
-                                    <br>
-                                    <span>${entry.date}</span>
+            <div class="row mb-3">
+                <div class="col">
+                    <div class="card text-bg-dark h-100">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-12">
+                                <img src="images/experience/${entry.image}" class="card-img-top card-img-bottom experience-img ms-md-3 mt-md-3">
+                            </div>
+                            <div class="col-md-9 col-sm-12">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <h4><b>${entry.company}</b></h4>
+                                        <span>${entry.position}</span>
+                                        <br>
+                                        <span>${entry.date}</span>
+                                    </div>
+                                    <hr>
+                                    <p class="card-text">
+                                        <span>${entry.bodyheading}</span>
+                                        <ul>${acclist}</ul>
+                                    </p>
                                 </div>
-                                <hr>
-                                <p class="card-text">
-                                    <span>${entry.bodyheading}</span>
-                                    <ul>${acclist}</ul>
-                                </p>
                             </div>
                         </div>
                     </div>

@@ -1,4 +1,11 @@
-[
+[{
+        "company": "J.D. Power",
+        "position": "Software Developer",
+        "date": "July 2025 - Present",
+        "image": "jdpower.png",
+        "bodyheading": "Once again :)",
+        "accomplishments": []
+    },
     {
         "company": "J.D. Power",
         "position": "Software Development Intern",
